@@ -64,18 +64,13 @@ Page({
 
   },
   /**
-   * 
+   * 登录方法
    */
   loginFun:function(){
     wx.navigateTo({
-      url: '/pages/mapDemo/mapDemo',
-      success: function(res) {
-        // 通过eventChannel向被打开页面传送数据
-        console.log("准备跳转页面",res)
-        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'test' })
-      },
+      url: '/pages/index/index',
       complete:function(com){
-        console.log(com)
+        // console.log(com)
       }
     })
   }

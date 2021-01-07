@@ -1,2 +1,10 @@
 <!--pages/mapDemo/mapDemo.wxml-->
-<text>pages/mapDemo/mapDemo.wxml</text>
+<view>
+  <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}"
+    markers="{{markers}}" polyline="{{polyline}}" show-location></map>
+  <view>
+    <button type="primary" bindtap="mapMoving">开始执行</button>
+    <!-- <button type="primary" bindtap="mapMoving">自定义分段移动</button>
+    <button type="primary" bindtap="mapMoving">小程序平滑移动</button> -->
+  </view>
+</view>

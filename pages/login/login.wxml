@@ -4,7 +4,7 @@
 	<view class="login-tit">
 		<image src="../../static/img/logo-text.png" mode="aspectFit"></image>
 	</view>
-	<view class="login-content" style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fblog%2F201406%2F12%2F20140612042459_nN5mZ.jpeg&refer=http%3A%2F%2Fcdn.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=d3ef29fb2ac552ed4ff394deb9793827);width:90%;height:70vh;">
+	<view class="login-content">
 		<!-- 登录表单 -->
 		<view class="login-form">
 			<view class="login-form-row">
@@ -21,8 +21,8 @@
 				<text>记住密码</text>
 			</view> -->
 			<!-- 隐私政策 -->
-			<view class="login-footer">
-				<checkbox value="cb" checked="true" color="#1777FF" style="transform:scale(0.8);" />已同意《汇星
+			<view class="login-footer login-text-white">
+				<checkbox value="cb" checked="true" color="#FCDF44" style="transform:scale(0.8);" />已同意《汇星
 				<text class="login-text-blue">用户服务协议</text>及
 				<text class="login-text-blue">隐私政策</text>》
 			</view>

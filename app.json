@@ -1,15 +1,19 @@
 {
-  "pages":[
+  "pages": [
     "pages/login/login",
     "pages/index/index",
-    "pages/logs/logs",
     "pages/mapDemo/mapDemo"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "汇星-乘客",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

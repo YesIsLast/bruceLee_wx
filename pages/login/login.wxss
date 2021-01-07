@@ -43,19 +43,23 @@
 }
 
 .login-btn {
-  background-color: #1777FF !important;
+  background-color: #dac400 !important;
   margin: 30rpx;
   letter-spacing: 10rpx;
+  color: rgb(255, 255, 255) !important;
 }
 .login-text-blue{
-  color: #1777FF;
+  color: #FCDF44;
+}
+.login-text-white{
+  color: white;
 }
 .login-footer{
   font-size: 28rpx;
 }
 .login-form-row{
-  color: #1777FF;
-  border-bottom: solid 2rpx #1777FF;
+  color: #FCDF44;
+  border-bottom: solid 2rpx #FCDF44;
   width: 100%;
   margin-bottom: 50rpx;
 }
