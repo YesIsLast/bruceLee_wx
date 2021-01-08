@@ -1,0 +1,96 @@
+/* components/homeMenu.wxss */
+.home-menu-main {
+  position: fixed;
+  bottom: 50rpx;
+  right: 50rpx;
+}
+
+.home-menu-content {
+  overflow: hidden;
+  height: 420rpx;
+  width: 310rpx;
+  position: relative;
+}
+
+.menu-master {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: #9da070;
+  opacity: 1;
+  box-shadow: 4rpx 4rpx 10rpx 2rpx #adb360;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: fixed;
+  right: 50rpx;
+  bottom: 50rpx;
+  z-index: 9;
+}
+
+.menu-master .iconfont {
+  font-size: 40rpx;
+  color: #eeff00;
+}
+
+
+.menu-list-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9da070;
+  border-bottom-style: none;
+  border-radius: 100rpx;
+  padding: 30rpx 0rpx 100rpx 0rpx;
+  z-index: 8;
+  opacity: .6;
+  transition: all .2s ease;
+}
+
+.menu-list-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #9da070;
+  border-bottom-style: none;
+  border-radius: 100rpx;
+  padding: 0rpx 100rpx 0rpx 30rpx;
+  z-index: 8;
+  opacity: .6;
+  transition: all .2s ease;
+}
+
+.menu-list-item {
+  padding: 20rpx;
+}
+
+.menu-list-item .iconfont {
+  font-size: 50rpx;
+  color: #c3d100;
+}
+
+.openMenuActive-X {
+  transform: translateX(0) scale(1);
+}
+
+.openMenuActive-Y {
+  transform: translateY(0) scale(1);
+}
+
+.closeMenuActive-Y {
+  transform: translateY(100%) scale(0);
+}
+
+.closeMenuActive-X {
+  transform: translateX(100%) scale(0);
+}

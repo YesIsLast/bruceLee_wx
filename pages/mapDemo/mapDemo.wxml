@@ -1,6 +1,6 @@
 <!--pages/mapDemo/mapDemo.wxml-->
 <view>
-  <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}"
+  <map id="myMap" style="width: 100%; height: 500px;" latitude="{{latitude}}" longitude="{{longitude}}"
     markers="{{markers}}" polyline="{{polyline}}" show-location></map>
   <view>
     <button type="primary" bindtap="mapMoving">开始执行</button>

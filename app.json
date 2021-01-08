@@ -13,7 +13,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "汇星-乘客",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

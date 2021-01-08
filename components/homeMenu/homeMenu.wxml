@@ -1,0 +1,36 @@
+<!--components/homeMenu.wxml-->
+<view class="home-menu-main">
+
+  <!-- 主按钮 -->
+  <view class="menu-master" bindtap="menuFixedClick">
+    <!-- 关闭菜单 -->
+    <text hidden="{{menuBtnStatus}}" class="iconfont iconadd1"></text>
+    <!-- 打开菜单 -->
+    <text hidden="{{!menuBtnStatus}}" class="iconfont iconreduction"></text>
+  </view>
+
+  <view class="home-menu-content">
+    <!-- 右侧菜单列表 -->
+    <view class="menu-list-right {{!menuBtnStatus?'closeMenuActive-Y':'openMenuActive-Y'}}">
+      <view class="menu-list-item">
+        <text class="iconfont iconpie"></text>
+      </view>
+      <view class="menu-list-item">
+        <text class="iconfont iconziyuan"></text>
+      </view>
+      <view class="menu-list-item">
+        <text class="iconfont iconareachart"></text>
+      </view>
+    </view>
+    <!-- 底部菜单列表 -->
+    <view class="menu-list-bottom {{!menuBtnStatus?'closeMenuActive-X':'openMenuActive-X'}}">
+    <view class="menu-list-item">
+      <text class="iconfont icondingwei"></text>
+    </view>
+    <view class="menu-list-item">
+      <text class="iconfont iconkeche"></text>
+    </view>
+  </view>
+  </view>
+
+</view>

@@ -111,8 +111,8 @@ Page({
           // 设置演示器执行司机位置的更新
           (function (i) {
             setTimeout(function () {
-              // that.updateUserAddr(points[i].latitude,points[i].longitude)
-              that.translateMarker(points[i].latitude,points[i].longitude)
+              that.updateUserAddr(points[i].latitude,points[i].longitude)
+              // that.translateMarker(points[i].latitude,points[i].longitude)
             },i*1000);
           })(i);
         }
