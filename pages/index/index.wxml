@@ -1,21 +1,96 @@
 <!--index.wxml-->
 <view class="home-main">
-  <!-- 固定菜单组件 -->
-  <homeMenu></homeMenu>
-  
+  <!-- 悬浮按钮组件 -->
+  <!-- <suspensionBtn></suspensionBtn> -->
+
   <!-- 页头 -->
-  <view class="home-head" style="background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F05%2F87%2F77%2F265c8f06bd9fff6.jpg&refer=http%3A%2F%2Fbpic.588ku.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612691170&t=dea402ca035eb500dd79faa9916b84d2)">
-    <view class="">
-      <image src=""></image>
+  <view class="home-head">
+    <!-- 页面导航栏 -->
+    <homeNav fixed="fixed"></homeNav>
+    <!-- 辅助功能菜单 -->
+    <view class="home-auxiliary-menuList">
+      <view class="menuList-item">
+        <text class="iconfont iconoffice-supplies-fill"></text>
+        <text>健康记录</text>
+      </view>
+      <view class="menuList-item">
+        <text class="iconfont iconrenwu"></text>
+        <text>申请</text>
+      </view>
+      <view class="menuList-item">
+        <text class="iconfont iconwujiaoxingxingxing"></text>
+        <text>班线收藏</text>
+      </view>
+      <view class="menuList-item">
+        <text class="iconfont iconbus"></text>
+        <text>班车服务</text>
+      </view>
+      <view class="menuList-item">
+        <text class="iconfont iconerweima"></text>
+        <text>乘车码</text>
+      </view>
     </view>
+
+    <!-- 滑动按钮,控制菜单的打开与关闭 -->
+    <view class="menu-row-line">
+      <view class="lineBtn"></view>
+    </view>
+  </view>
+  <!-- 班线任务轮播图 -->
+  <view class="shift-carousel" style="top:{{navH}}px">
+    <!-- 班线说明 -->
+    <view class="carousel-title">
+      <text class="title-left">今日班车</text>
+      <view class="title-right">
+        更多<text class="iconfont iconright"></text>
+      </view>
+    </view>
+    <swiper class="swiper-con" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{80000}}" circular="{{true}}">
+      <swiper-item>
+        <view class="carousel-item"
+          style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
+          <!-- 卡片头 -->
+          <view class="carousel-item-head">
+            <view class="carousel-item-head-row-1">
+              <view>长春北站23号线(接班)</view>
+              <view class="shift-datetime">2021-01-09 17:17</view>
+            </view>
+            <view class="carousel-item-head-row-2">
+              <text>长春北站</text>
+              <image src="../../static/img/car-1.png"></image>
+              <text>吉林西站</text>
+            </view>
+          </view>
+          <!-- 卡片内容 -->
+          <view class="carousel-item-content">
+
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="carousel-item"
+          style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
+          <text>南湖公园1号线</text>，乘车时间：<text>25:61</text>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="carousel-item"
+          style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
+          <text>吉林龙潭山</text>，乘车时间：<text>12:25</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 页面内容区 -->
+  <view>
+    <button type="default" bindtap="menuJump" data-params='menu1'>点平滑移动demo</button>
   </view>
 
 
 
 
 
-
-  <button type="default" bindtap="menuJump" data-params='menu1'>点平滑移动demo</button>
 
 
 

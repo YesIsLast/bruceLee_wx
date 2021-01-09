@@ -1,0 +1,15 @@
+<!--components/homeNav.wxml-->
+<view class="homeNav-main" style="position: {{fixed}};height:{{navH}}px;">
+  <view class="homeNav-content" style="position: absolute;top:{{navT}}px;height:{{navCH}}px;padding-right:{{navCW}}px">
+    <!-- 扫码 -->
+    <view class="homeNav-left">
+      <text class="iconfont iconicon_scan"></text>
+    </view>
+    <!-- 搜索区 -->
+    <view class="homeNav-search">
+      <input class="weui-input" placeholder="目的地，班线编号" placeholder-style="color:#d1d1d1" />
+    </view>
+  </view>
+</view>
+<!-- 使用固定头部时(fixed/absolute/sticty)，自动填充固定导致的空白区域 -->
+<view wx:if="{{fixed != 'static'}}" style="height:{{navH}}px"></view>

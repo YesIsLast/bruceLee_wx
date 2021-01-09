@@ -1,9 +1,114 @@
 /**index.wxss**/
 .home-main{
   width: 100vw;
-  min-height: 100vh;
+  min-height: 130vh;
+  z-index: -1;
+  background-color: #F7F7F7;
 }
 .home-head{
   width: 100vw;
-  height: 35vh;
+  height: 21vh;
+  background-color: #333333;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  z-index: 99;
+  position: relative;
+}
+.home-auxiliary-menuList{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  /* margin-top: 30rpx; */
+}
+.menuList-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #F4D060;
+  font-size: 25rpx;
+  width: 18%;
+}
+.menuList-item .iconfont{
+  font-size: 70rpx;
+}
+/* 菜单滑动线 */
+.menu-row-line{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10rpx;  /* 横线图标定位使用 */
+}
+/* 横线图标 */
+.menu-row-line .lineBtn{
+  background-color: #9b9b9b;
+  width: 15vw;
+  height: 10rpx;
+  border-radius: 10rpx;
+}
+/* 线路轮播图 */
+.shift-carousel{
+  position: sticky;
+  z-index: 99;
+  background-color: #F7F7F7;
+}
+/* 轮播图高度 */
+.swiper-con{
+  min-height: 30vh;
+}
+.carousel-title{
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25rpx;
+  color: #333333;
+}
+.title-left{
+  font-weight: 700;
+  font-size: 35rpx;
+}
+.title-right{
+  color: #7e7e7e;
+}
+.title-right .iconfont{
+  font-size: 25rpx;
+  color: #000000;
+}
+
+.carousel-item{
+  height: 100%;
+  margin: 0 30rpx 30rpx 30rpx;
+  border-radius: 40rpx;
+  color: #F4D060;
+  background-size: 100% 100%;
+}
+.carousel-item-head{
+  padding: 20rpx;
+  border-bottom: dashed 1rpx #5f4f20;
+  display: flex;
+  flex-direction: column;
+}
+.carousel-item-head-row-1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.carousel-item-head-row-1 .shift-datetime{
+  font-size: 25rpx;
+  color: #99823c;
+}
+.carousel-item-head-row-2{
+  border-bottom: solid 1rpx #F7F7F7;
+  
+}
+
+
+.carousel-item-content{
+  padding: 20rpx;
 }

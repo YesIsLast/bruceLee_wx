@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "homeMenu": "/components/homeMenu/homeMenu"
+    "suspensionBtn": "/components/suspensionBtn/suspensionBtn",
+    "homeNav": "/components/homeNav/homeNav"
   }
 }
