@@ -16,7 +16,6 @@ App({
         this.globalData.navHeight = navHeight; // 导航栏整体高度(信号栏 + 胶囊按钮栏)
         this.globalData.navContentHeight = menuButtonObject.height; // 导航栏内容区高度(胶囊按钮栏)
         this.globalData.navTop = navTop;//胶囊按钮与顶部的距离
-        console.log("胶囊按钮宽度",capsuleBtnWidth)
         this.globalData.capsuleBtnWidth = capsuleBtnWidth // 胶囊按钮所占宽度(屏幕宽度-胶囊右边界坐标=胶囊右侧外边距)
         this.globalData.windowWidth = res.windowWidth // 手机屏幕宽度
       },

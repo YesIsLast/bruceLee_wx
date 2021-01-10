@@ -1,11 +1,12 @@
 /**index.wxss**/
-.home-main{
+.home-main {
   width: 100vw;
   min-height: 130vh;
   z-index: -1;
   background-color: #F7F7F7;
 }
-.home-head{
+
+.home-head {
   width: 100vw;
   height: 21vh;
   background-color: #333333;
@@ -14,14 +15,16 @@
   z-index: 99;
   position: relative;
 }
-.home-auxiliary-menuList{
+
+.home-auxiliary-menuList {
   display: flex;
   justify-content: space-around;
   align-items: center;
   z-index: 100;
   /* margin-top: 30rpx; */
 }
-.menuList-item{
+
+.menuList-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,36 +33,43 @@
   font-size: 25rpx;
   width: 18%;
 }
-.menuList-item .iconfont{
+
+.menuList-item .iconfont {
   font-size: 70rpx;
 }
+
 /* 菜单滑动线 */
-.menu-row-line{
+.menu-row-line {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 10rpx;  /* 横线图标定位使用 */
+  bottom: 10rpx;
+  /* 横线图标定位使用 */
 }
+
 /* 横线图标 */
-.menu-row-line .lineBtn{
+.menu-row-line .lineBtn {
   background-color: #9b9b9b;
   width: 15vw;
   height: 10rpx;
   border-radius: 10rpx;
 }
+
 /* 线路轮播图 */
-.shift-carousel{
+.shift-carousel {
   position: sticky;
   z-index: 99;
   background-color: #F7F7F7;
 }
+
 /* 轮播图高度 */
-.swiper-con{
+.swiper-con {
   min-height: 30vh;
 }
-.carousel-title{
+
+.carousel-title {
   padding: 30rpx;
   display: flex;
   flex-direction: row;
@@ -68,47 +78,85 @@
   font-size: 25rpx;
   color: #333333;
 }
-.title-left{
+
+.title-left {
   font-weight: 700;
   font-size: 35rpx;
 }
-.title-right{
+
+.title-right {
   color: #7e7e7e;
 }
-.title-right .iconfont{
+
+.title-right .iconfont {
   font-size: 25rpx;
   color: #000000;
 }
 
-.carousel-item{
+.carousel-item {
   height: 100%;
   margin: 0 30rpx 30rpx 30rpx;
   border-radius: 40rpx;
   color: #F4D060;
   background-size: 100% 100%;
 }
-.carousel-item-head{
-  padding: 20rpx;
+.shift-siteName{
+  color: #00e48c;
+  font-size: 25rpx;
+}
+
+.carousel-item-head {
+  padding: 20rpx 20rpx 10rpx 20rpx;
   border-bottom: dashed 1rpx #5f4f20;
   display: flex;
   flex-direction: column;
 }
-.carousel-item-head-row-1{
+
+.carousel-item-head-row-1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20rpx;
+  font-weight: 700;
 }
-.carousel-item-head-row-1 .shift-datetime{
+
+.carousel-item-head-row-1 .shift-datetime {
+  font-weight: 500;
   font-size: 25rpx;
   color: #99823c;
 }
-.carousel-item-head-row-2{
-  border-bottom: solid 1rpx #F7F7F7;
-  
+
+.carousel-item-head-row-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
 
-
-.carousel-item-content{
+.carousel-item-content {
   padding: 20rpx;
+}
+
+/* 车辆运动动画 */
+.shift-car-animate-go {
+  height: 50rpx;
+  width: 100rpx;
+  position: absolute;
+  bottom: -10rpx;
+  left: 0;
+  transition: all 1s cubic-bezier(.65,-0.3,.31,1.39);
+}
+.shift-car-animate-go-active{
+  left: 45%;
+}
+.shift-car-animate-back {
+  height: 50rpx;
+  width: 100rpx;
+  position: absolute;
+  bottom: -10rpx;
+  right: 0;
+  transition: all 1s cubic-bezier(.65,-0.3,.31,1.39);
+}
+.shift-car-animate-back-active{
+  right: 45%;
 }

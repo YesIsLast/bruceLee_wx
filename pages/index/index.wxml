@@ -45,7 +45,9 @@
         更多<text class="iconfont iconright"></text>
       </view>
     </view>
-    <swiper class="swiper-con" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{80000}}" circular="{{true}}">
+    <swiper class="swiper-con" bindanimationfinish="bindanimationfinish" indicator-dots="{{true}}" autoplay="{{true}}"
+      interval="{{5000}}" circular="{{true}}">
+      <!-- 0 -->
       <swiper-item>
         <view class="carousel-item"
           style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
@@ -56,27 +58,49 @@
               <view class="shift-datetime">2021-01-09 17:17</view>
             </view>
             <view class="carousel-item-head-row-2">
-              <text>长春北站</text>
-              <image src="../../static/img/car-1.png"></image>
-              <text>吉林西站</text>
+              <text class="shift-siteName">长春北站</text>
+              <image class="shift-car-animate-go {{carousel_currentGo?'shift-car-animate-go-active':'' }}"
+                src="../../static/img/car-1.png"></image>
+              <text class="shift-siteName">吉林西站</text>
             </view>
           </view>
           <!-- 卡片内容 -->
           <view class="carousel-item-content">
-
+            <view>
+              班车司机：贝吉塔
+            </view>
+            <view>
+              联系司机：0000-9527
+            </view>
           </view>
         </view>
       </swiper-item>
+      <!-- 1 -->
       <swiper-item>
         <view class="carousel-item"
           style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
-          <text>南湖公园1号线</text>，乘车时间：<text>25:61</text>
-        </view>
-      </swiper-item>
-      <swiper-item>
-        <view class="carousel-item"
-          style="background-image: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2Fday_110406%2F1104062007632ac27fcb66edc7.jpg&refer=http%3A%2F%2Fattachments.gfan.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612533898&t=82c4810fd3ed5dee32bcf5cca7622095);">
-          <text>吉林龙潭山</text>，乘车时间：<text>12:25</text>
+          <!-- 卡片头 -->
+          <view class="carousel-item-head">
+            <view class="carousel-item-head-row-1">
+              <view>南湖公园9号线(送班)</view>
+              <view class="shift-datetime">2021-01-09 17:17</view>
+            </view>
+            <view class="carousel-item-head-row-2">
+              <text class="shift-siteName">长春北站</text>
+              <image class="shift-car-animate-back {{carousel_currentBack?'shift-car-animate-back-active':'' }}"
+                src="../../static/img/car-2.png"></image>
+              <text class="shift-siteName">吉林西站</text>
+            </view>
+          </view>
+          <!-- 卡片内容 -->
+          <view class="carousel-item-content">
+            <view>
+              班车司机：卡卡罗特
+            </view>
+            <view>
+              联系司机：0000-9527
+            </view>
+          </view>
         </view>
       </swiper-item>
     </swiper>
