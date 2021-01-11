@@ -29,7 +29,11 @@
         <text class="iconfont iconerweima"></text>
         <text>乘车码</text>
       </view>
-      <view class="menuList-item" wx:for="{{7}}" wx:key="*this">
+      <view class="menuList-item" bindtap="menuJump" data-params='menu1'>
+        <text class="iconfont iconmap1"></text>
+        <text>点平滑移动</text>
+      </view>
+      <view class="menuList-item" wx:for="{{6}}" wx:key="*this">
         <text class="iconfont iconwujiaoxingxingxing"></text>
         <text>班线收藏</text>
       </view>
@@ -45,13 +49,13 @@
   <!-- 班线任务轮播图 -->
   <view class="shift-carousel" style="top:{{navH}}px">
     <!-- 班线说明 -->
-    <view class="carousel-title">
-      <text class="title-left">今日班车</text>
-      <view class="title-right">
+    <view class="home-title">
+      <text class="home-title-left">今日班车</text>
+      <view class="home-title-right">
         更多<text class="iconfont iconright"></text>
       </view>
     </view>
-    <swiper class="swiper-con" bindanimationfinish="bindanimationfinish" indicator-dots="{{true}}" autoplay="{{false}}"
+    <swiper class="swiper-con" bindanimationfinish="bindanimationfinish" indicator-dots="{{true}}" autoplay="{{true}}"
       interval="{{5000}}" circular="{{true}}">
       <!-- 0 -->
       <swiper-item>
@@ -87,7 +91,6 @@
               <text class="devBtn">评价</text>
               <text class="masterBtn">联系司机</text>
             </view>
-
           </view>
         </view>
       </swiper-item>
@@ -110,11 +113,20 @@
           </view>
           <!-- 卡片内容 -->
           <view class="carousel-item-content">
-            <view>
-              班车司机：卡卡罗特
+            <!-- 车辆信息 -->
+            <view class="item-content-head">
+              <view class="item-content-head-1">
+                <text>司机：邻居刘姨</text>
+                <view class="shift-car-status">待发车</view>
+              </view>
+              <view class="item-content-head-2">
+                车牌号：吉A好几个6
+              </view>
             </view>
-            <view>
-              联系司机：0000-9527
+
+            <view class="item-content-footer">
+              <text class="devBtn">评价</text>
+              <text class="masterBtn">联系司机</text>
             </view>
           </view>
         </view>
@@ -122,16 +134,51 @@
     </swiper>
   </view>
 
-  <!-- 页面内容区 -->
-  <view>
-    <button type="default" bindtap="menuJump" data-params='menu1'>点平滑移动demo</button>
+  <!-- <view class="home-title">
+    <text class="home-title-left">日常登记</text>
+    <view class="home-title-right">
+      更多记录<text class="iconfont iconright"></text>
+    </view>
+  </view> -->
+  <view class="home-tab">
+    <view class="home-tab-item">
+      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active">健康登记</view>
+    </view>
+    <view class="home-tab-item">
+      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active">网格登记</view>
+    </view>
+    <view class="home-tab-item">
+      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active">不知道啥记</view>
+    </view>
   </view>
 
+  <!-- 页面内容选项卡切换 -->
+  <view class="home-content"
+    style="background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F20%2F72%2FpcFqYdcu47.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612949510&t=5139d9b6fef8d48df17e4c6e0cde631f)">
 
 
+    <!-- 选项卡内容区 -->
 
+    <!-- 今日健康状态记录 -->
+    <view class="health-record">
+      <view style="display:flex">
+        <text>当前体温(℃)：</text>
+        <view class="health-input">
+          <input type="number" />
+        </view>
+      </view>
+      <view class="health-uploadImg">
+        <text class="iconfont iconupload-img"></text>
+      </view>
+      <button class="recordBtn" type="primary">登记</button>
+    </view>
 
+    <!-- 网格等级 -->
+    <view>
 
-
-
+    </view>
+  </view>
 </view>

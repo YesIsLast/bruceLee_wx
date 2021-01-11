@@ -2,5 +2,6 @@
   "usingComponents": {
     "suspensionBtn": "/components/suspensionBtn/suspensionBtn",
     "homeNav": "/components/homeNav/homeNav"
-  }
+  },
+  "navigationBarTextStyle": "white"
 }
