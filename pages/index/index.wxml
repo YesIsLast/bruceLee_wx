@@ -4,7 +4,7 @@
   <!-- <suspensionBtn></suspensionBtn> -->
 
   <!-- 页头 -->
-  <view class="home-head">
+  <view class="home-head" style="{{homeMenuOpen?'height:45vh':''}}">
     <!-- 页面导航栏 -->
     <homeNav fixed="fixed"></homeNav>
     <!-- 辅助功能菜单 -->
@@ -29,10 +29,16 @@
         <text class="iconfont iconerweima"></text>
         <text>乘车码</text>
       </view>
+      <view class="menuList-item" wx:for="{{7}}" wx:key="*this">
+        <text class="iconfont iconwujiaoxingxingxing"></text>
+        <text>班线收藏</text>
+      </view>
     </view>
 
     <!-- 滑动按钮,控制菜单的打开与关闭 -->
-    <view class="menu-row-line">
+    <!-- 增加手指下拉功能 -->
+    <view class="menu-row-line" bindtouchstart='touchMenuStart' bindtouchmove='touchMenuMove'
+      bindtouchend='touchMenuEnd'>
       <view class="lineBtn"></view>
     </view>
   </view>
@@ -45,7 +51,7 @@
         更多<text class="iconfont iconright"></text>
       </view>
     </view>
-    <swiper class="swiper-con" bindanimationfinish="bindanimationfinish" indicator-dots="{{true}}" autoplay="{{true}}"
+    <swiper class="swiper-con" bindanimationfinish="bindanimationfinish" indicator-dots="{{true}}" autoplay="{{false}}"
       interval="{{5000}}" circular="{{true}}">
       <!-- 0 -->
       <swiper-item>
@@ -66,12 +72,22 @@
           </view>
           <!-- 卡片内容 -->
           <view class="carousel-item-content">
-            <view>
-              班车司机：贝吉塔
+            <!-- 车辆信息 -->
+            <view class="item-content-head">
+              <view class="item-content-head-1">
+                <text>司机：隔壁老王</text>
+                <view class="shift-car-status">班次执行中</view>
+              </view>
+              <view class="item-content-head-2">
+                车牌号：吉A好几个8
+              </view>
             </view>
-            <view>
-              联系司机：0000-9527
+
+            <view class="item-content-footer">
+              <text class="devBtn">评价</text>
+              <text class="masterBtn">联系司机</text>
             </view>
+
           </view>
         </view>
       </swiper-item>

@@ -18,7 +18,7 @@ Component({
   lifetimes: {
     // 页面准备就绪钩子
     ready: function () {
-      console.log(this.data.navW,App.globalData.capsuleBtnWidth,App.globalData.windowWidth)
+
     },
     // 在组件实例进入页面节点树时执行钩子
     attached: function () {
@@ -39,8 +39,8 @@ Component({
     navH: null, // 导航栏适配高度
     navT: null, // 导航栏内容距离顶部高度
     navCH: null, // 导航栏内容高度
-    navW:null, // 导航栏宽度
-    navCW:null, // 胶囊按钮所占宽度
+    navW: null, // 导航栏宽度
+    navCW: null, // 胶囊按钮所占宽度
   },
 
   /**

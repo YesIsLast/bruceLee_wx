@@ -10,17 +10,19 @@
   width: 100vw;
   height: 21vh;
   background-color: #333333;
-  border-bottom-left-radius: 20%;
-  border-bottom-right-radius: 20%;
+  border-bottom-left-radius: 20vw 4vh;
+  border-bottom-right-radius: 20vw 4vh;
   z-index: 99;
   position: relative;
+  transition: all .4s ease;
 }
 
 .home-auxiliary-menuList {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   z-index: 100;
+  flex-wrap: wrap;
   /* margin-top: 30rpx; */
 }
 
@@ -31,7 +33,8 @@
   justify-content: center;
   color: #F4D060;
   font-size: 25rpx;
-  width: 18%;
+  width: 20%;
+  padding-bottom: 2vh;
 }
 
 .menuList-item .iconfont {
@@ -46,7 +49,7 @@
   justify-content: center;
   position: absolute;
   bottom: 10rpx;
-  /* 横线图标定位使用 */
+  cursor: pointer;
 }
 
 /* 横线图标 */
@@ -100,8 +103,9 @@
   color: #F4D060;
   background-size: 100% 100%;
 }
-.shift-siteName{
-  color: #00e48c;
+
+.shift-siteName {
+  color: #c7ab59;
   font-size: 25rpx;
 }
 
@@ -135,7 +139,48 @@
 
 .carousel-item-content {
   padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
+.item-content-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-content-head .item-content-head-1 {
+  display: flex;
+  justify-content: space-between
+}
+
+.item-content-head .item-content-head-2 {
+  padding: 10rpx 0;
+}
+
+.item-content-footer {
+  position: absolute;
+  bottom: 0;
+  right: 30rpx;
+  padding: 20rpx;
+}
+.shift-car-status{
+  color: #0be968;
+}
+.item-content-footer .masterBtn{
+  border: solid 1rpx #F4D060;
+  border-radius: 10rpx;
+  padding: 5rpx 20rpx;
+}
+.item-content-footer .devBtn{
+  border: solid 1rpx #F4D060;
+  border-radius: 10rpx;
+  padding: 5rpx 20rpx;
+  margin-right: 30rpx;
+}
+
+
+
 
 /* 车辆运动动画 */
 .shift-car-animate-go {
@@ -144,19 +189,22 @@
   position: absolute;
   bottom: -10rpx;
   left: 0;
-  transition: all 1s cubic-bezier(.65,-0.3,.31,1.39);
+  transition: all 1s cubic-bezier(.65, -0.3, .31, 1.39);
 }
-.shift-car-animate-go-active{
+
+.shift-car-animate-go-active {
   left: 45%;
 }
+
 .shift-car-animate-back {
   height: 50rpx;
   width: 100rpx;
   position: absolute;
   bottom: -10rpx;
   right: 0;
-  transition: all 1s cubic-bezier(.65,-0.3,.31,1.39);
+  transition: all 1s cubic-bezier(.65, -0.3, .31, 1.39);
 }
-.shift-car-animate-back-active{
+
+.shift-car-animate-back-active {
   right: 45%;
 }
