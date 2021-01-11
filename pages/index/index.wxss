@@ -36,7 +36,8 @@
   color: #F4D060;
   font-size: 25rpx;
   width: 20%;
-  padding-bottom: 2vh;
+  margin-bottom: 2vh;
+  height: 8vh;
 }
 
 .menuList-item .iconfont {
@@ -47,11 +48,11 @@
 .menu-row-line {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   position: absolute;
   bottom: 10rpx;
-  cursor: pointer;
+  height: 30rpx;
 }
 
 /* 横线图标 */
@@ -60,6 +61,7 @@
   width: 15vw;
   height: 10rpx;
   border-radius: 10rpx;
+  cursor: pointer;
 }
 
 /* 线路轮播图 */
@@ -162,7 +164,7 @@
 
 .item-content-footer {
   position: absolute;
-  bottom: 0;
+  bottom: 24rpx;
   right: 30rpx;
   padding: 20rpx;
 }
@@ -242,20 +244,16 @@
   z-index: 9;
 }
 
-.home-tab-item:hover .home-tab-active {
-  background: linear-gradient(160deg, #ffe600, rgb(243, 56, 56));
-  -webkit-background-clip: text;
-  color: transparent;
-  transform: scale(1.8);
-}
-.home-tab-item:hover .home-tab-image-active{
-  display: block;
-}
-
 .home-tab-active {
   transform: scale(1.4);
   transition: all .3s ease;
 
+}
+.home-tab-active-hover {
+  background: linear-gradient(160deg, #ffe600, rgb(243, 56, 56));
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: scale(1.8);
 }
 .home-tab-image-active{
   width: 30rpx;
@@ -264,8 +262,13 @@
   top: -30rpx;
   left: 5rpx;
   z-index: 99;
-  display: none;
+  transform: scale(0);
+  transition: all .3s cubic-bezier(1,-0.48,.02,1.49);
 }
+.home-tab-image-active-hover{
+  transform: scale(1);
+}
+
 
 /* 模块标题公用样式 */
 .home-title {
@@ -295,7 +298,11 @@
 .health-record{
   display: flex;
   flex-direction: column;
-  color: #0be968;
+  color: #333333;
+}
+.health-input{
+  border-bottom: solid 1rpx #333333;
+  padding: 0 8rpx;
 }
 .health-uploadImg{
   display: flex;
@@ -307,7 +314,7 @@
 }
 .health-uploadImg .iconfont{
   font-size: 130rpx;
-  color: #0be968;
+  color: #bbbbbb;
 }
 .recordBtn{
   background-color: #dac400 !important;
@@ -315,6 +322,10 @@
   letter-spacing: 10rpx;
   color: rgb(255, 255, 255) !important;
 }
-.health-input{
-  border-bottom: solid 1rpx #0be968;
+.health-checkbox{
+  padding: 20rpx 0;
+}
+.health-checkbox-item{
+  padding-right: 10rpx;
+  
 }

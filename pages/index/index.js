@@ -9,6 +9,7 @@ Page({
     touchS: [0, 0], // 触摸滑动开始坐标
     touchE: [0, 0], // 触摸滑动结束坐标
     homeMenuOpen:false, // 首页菜单是否展开
+    tabActive: 0, // tab选中项下标
   },
   onLoad: function () {
     this.setData({
@@ -22,6 +23,13 @@ Page({
       })
     }, 1000);
 
+  },
+  // tab选项卡点击事件
+  tabClick(e){
+    console.log(e.currentTarget.dataset.params)
+    this.setData({
+      tabActive: e.currentTarget.dataset.params
+    })
   },
   // 菜单下滑
   touchMenuStart: function (e) {

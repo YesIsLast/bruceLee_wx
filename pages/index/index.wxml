@@ -4,7 +4,7 @@
   <!-- <suspensionBtn></suspensionBtn> -->
 
   <!-- 页头 -->
-  <view class="home-head" style="{{homeMenuOpen?'height:45vh':''}}">
+  <view class="home-head" style="{{homeMenuOpen?'height:43vh':''}}">
     <!-- 页面导航栏 -->
     <homeNav fixed="fixed"></homeNav>
     <!-- 辅助功能菜单 -->
@@ -141,34 +141,51 @@
     </view>
   </view> -->
   <view class="home-tab">
-    <view class="home-tab-item">
-      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
-      <view class="home-tab-active">健康登记</view>
+    <view class="home-tab-item" bindtap="tabClick" data-params="0">
+      <image class="home-tab-image-active {{tabActive == 0 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active {{tabActive == 0 ? 'home-tab-active-hover':''}}">健康登记</view>
     </view>
-    <view class="home-tab-item">
-      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
-      <view class="home-tab-active">网格登记</view>
+    <view class="home-tab-item" bindtap="tabClick" data-params="1">
+      <image class="home-tab-image-active {{tabActive == 1 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active {{tabActive == 1 ? 'home-tab-active-hover':''}}">网格登记</view>
     </view>
-    <view class="home-tab-item">
-      <image class="home-tab-image-active" src="../../static/img/menuIcon.png"></image>
-      <view class="home-tab-active">不知道啥记</view>
+    <view class="home-tab-item" bindtap="tabClick" data-params="2">
+      <image class="home-tab-image-active {{tabActive == 2 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+      <view class="home-tab-active {{tabActive == 2 ? 'home-tab-active-hover':''}}">不知道啥记</view>
     </view>
   </view>
 
   <!-- 页面内容选项卡切换 -->
-  <view class="home-content"
-    style="background-image:url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F20%2F72%2FpcFqYdcu47.jpg&refer=http%3A%2F%2Fpic.616pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612949510&t=5139d9b6fef8d48df17e4c6e0cde631f)">
-
-
+  <view class="home-content">
     <!-- 选项卡内容区 -->
-
-    <!-- 今日健康状态记录 -->
-    <view class="health-record">
+<view class="health-record">
+  <!-- 今日健康状态记录 -->
       <view style="display:flex">
         <text>当前体温(℃)：</text>
         <view class="health-input">
           <input type="number" />
         </view>
+      </view>
+      <!-- 身体状况 -->
+      <view class="health-checkbox">
+        <checkbox-group>
+          <label class="health-checkbox-item">
+              <checkbox style="transform:scale(.8)" color="#dda200"/>
+              <text>干咳</text>
+          </label>
+          <label>
+              <checkbox style="transform:scale(.8)" color="#dda200"/>
+              <text>泡沫痰</text>
+          </label>
+          <label>
+              <checkbox style="transform:scale(.8)" color="#dda200"/>
+              <text>乏力</text>
+          </label>
+          <label>
+              <checkbox style="transform:scale(.8)" color="#dda200"/>
+              <text>呼吸困难</text>
+          </label>
+        </checkbox-group>
       </view>
       <view class="health-uploadImg">
         <text class="iconfont iconupload-img"></text>
