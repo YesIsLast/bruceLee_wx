@@ -58,7 +58,7 @@
 /* 横线图标 */
 .menu-row-line .lineBtn {
   background-color: #9b9b9b;
-  width: 15vw;
+  width: 10vw;
   height: 10rpx;
   border-radius: 10rpx;
   cursor: pointer;
@@ -301,8 +301,8 @@
   color: #333333;
 }
 .health-input{
-  border-bottom: solid 1rpx #333333;
-  padding: 0 8rpx;
+  border-bottom: solid 1rpx #a5a5a5;
+  padding: 5rpx 8rpx;
 }
 .health-uploadImg{
   display: flex;

@@ -1,0 +1,7 @@
+<!--components/tag-lee/tag-lee.wxml-->
+<view class="tag-main" style="background-color:{{tagActiveColor}}" bindtap="tagclick">
+  <!-- 标签名称 -->
+  <slot></slot>
+  <!-- 删除标签按钮 -->
+  <!-- 新增标签按钮 -->
+</view>

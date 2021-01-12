@@ -133,59 +133,43 @@
       </swiper-item>
     </swiper>
   </view>
-
-  <!-- <view class="home-title">
-    <text class="home-title-left">日常登记</text>
-    <view class="home-title-right">
-      更多记录<text class="iconfont iconright"></text>
-    </view>
-  </view> -->
+  
   <view class="home-tab">
     <view class="home-tab-item" bindtap="tabClick" data-params="0">
-      <image class="home-tab-image-active {{tabActive == 0 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+      <image class="home-tab-image-active {{tabActive == 0 ?'home-tab-image-active-hover':''}}"
+        src="../../static/img/menuIcon.png"></image>
       <view class="home-tab-active {{tabActive == 0 ? 'home-tab-active-hover':''}}">健康登记</view>
     </view>
     <view class="home-tab-item" bindtap="tabClick" data-params="1">
-      <image class="home-tab-image-active {{tabActive == 1 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+      <image class="home-tab-image-active {{tabActive == 1 ?'home-tab-image-active-hover':''}}"
+        src="../../static/img/menuIcon.png"></image>
       <view class="home-tab-active {{tabActive == 1 ? 'home-tab-active-hover':''}}">网格登记</view>
     </view>
-    <view class="home-tab-item" bindtap="tabClick" data-params="2">
-      <image class="home-tab-image-active {{tabActive == 2 ?'home-tab-image-active-hover':''}}" src="../../static/img/menuIcon.png"></image>
+    <!-- <view class="home-tab-item" bindtap="tabClick" data-params="2">
+      <image class="home-tab-image-active {{tabActive == 2 ?'home-tab-image-active-hover':''}}"
+        src="../../static/img/menuIcon.png"></image>
       <view class="home-tab-active {{tabActive == 2 ? 'home-tab-active-hover':''}}">不知道啥记</view>
-    </view>
+    </view> -->
   </view>
-
-  <!-- 页面内容选项卡切换 -->
+  <!-- 选项卡切换内容区 -->
   <view class="home-content">
-    <!-- 选项卡内容区 -->
-<view class="health-record">
-  <!-- 今日健康状态记录 -->
+    <!-- 今日健康状态记录 -->
+    <view class="health-record" hidden="{{tabActive == 1}}">
       <view style="display:flex">
         <text>当前体温(℃)：</text>
         <view class="health-input">
-          <input type="number" />
+          <input type="digit" placeholder="请输入当前体温℃" />
         </view>
       </view>
       <!-- 身体状况 -->
       <view class="health-checkbox">
-        <checkbox-group>
-          <label class="health-checkbox-item">
-              <checkbox style="transform:scale(.8)" color="#dda200"/>
-              <text>干咳</text>
-          </label>
-          <label>
-              <checkbox style="transform:scale(.8)" color="#dda200"/>
-              <text>泡沫痰</text>
-          </label>
-          <label>
-              <checkbox style="transform:scale(.8)" color="#dda200"/>
-              <text>乏力</text>
-          </label>
-          <label>
-              <checkbox style="transform:scale(.8)" color="#dda200"/>
-              <text>呼吸困难</text>
-          </label>
-        </checkbox-group>
+        <tagLee>干咳</tagLee>
+        <tagLee>泡沫痰</tagLee>
+        <tagLee>乏力</tagLee>
+        <tagLee>呼吸困难</tagLee>
+        <view style="font-size:25rpx;color:#999999;float:right;margin-top:20rpx">
+          <text>请根据具体情况选择以上症状，无以上症状可不选</text>
+        </view>
       </view>
       <view class="health-uploadImg">
         <text class="iconfont iconupload-img"></text>
@@ -193,9 +177,47 @@
       <button class="recordBtn" type="primary">登记</button>
     </view>
 
-    <!-- 网格等级 -->
-    <view>
+    <!-- 网格登记 -->
+    <view class="grid-record" hidden="{{tabActive == 0}}">
+      <text>本人是否出格</text>
+      <checkbox-group>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>是</text>
+        </label>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>否</text>
+        </label>
+      </checkbox-group>
+      <text>是否接触非本地人员</text>
+      <checkbox-group>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>是</text>
+        </label>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>否</text>
+        </label>
+      </checkbox-group>
 
+      <text>即将接触外来人员</text>
+      <checkbox-group>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>是</text>
+        </label>
+        <label class="grid-checkbox-item">
+          <checkbox style="transform:scale(.8)" color="#dda200" />
+          <text>否</text>
+        </label>
+      </checkbox-group>
+      <view>
+        <!-- <textarea placeholder="请输入特殊情况备注信息"/> -->
+      </view>
+
+      <button class="recordBtn" type="primary">登记</button>
     </view>
   </view>
 </view>
