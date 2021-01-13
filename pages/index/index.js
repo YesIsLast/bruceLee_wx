@@ -3,7 +3,7 @@
 const App = getApp()
 Page({
   data: {
-    navH: null, // 顶部导航栏高度
+    carouselTop: null, // 班车任务轮播图距离顶部坐标
     carousel_currentGo: false, // 接班动画
     carousel_currentBack: false, // 送班动画
     touchS: [0, 0], // 触摸滑动开始坐标
@@ -13,7 +13,7 @@ Page({
   },
   onLoad: function () {
     this.setData({
-      navH: App.globalData.navHeight + 10
+      carouselTop: App.globalData.navHeight - 20
     })
   },
   onReady: function () {

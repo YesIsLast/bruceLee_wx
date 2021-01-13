@@ -4,7 +4,7 @@
   /* min-height: 100vh; */
   z-index: -1;
   background-color: #F7F7F7;
-  padding-bottom: 30rpx;
+  padding-bottom: calc(30rpx + 100rpx);
 }
 
 .home-head {
@@ -67,13 +67,13 @@
 /* 线路轮播图 */
 .shift-carousel {
   position: sticky;
-  z-index: 99;
   background-color: #F7F7F7;
+  z-index: 10;
 }
 
 /* 轮播图高度 */
 .swiper-con {
-  min-height: 30vh;
+  min-height: 20vh;
 }
 
 .carousel-title {
@@ -102,7 +102,7 @@
 
 .carousel-item {
   height: 100%;
-  margin: 0 30rpx 30rpx 30rpx;
+  margin: 0 20rpx 20rpx 20rpx;
   border-radius: 40rpx;
   color: #F4D060;
   background-size: 100% 100%;
@@ -232,40 +232,41 @@
   height: 100rpx;
   display: flex;
   align-items: center;
+  z-index: 9;
 }
 
 .home-tab .home-tab-item {
   display: inline;
-  padding: 0 60rpx;
+  padding: 0 70rpx 5rpx 70rpx;
   font-size: 25rpx;
   font-weight: 700;
   border-right: solid 1rpx #cfcfcf;
   position: relative;
-  z-index: 9;
 }
 
 .home-tab-active {
   transform: scale(1.4);
   transition: all .3s ease;
-
 }
+
 .home-tab-active-hover {
   background: linear-gradient(160deg, #ffe600, rgb(243, 56, 56));
   -webkit-background-clip: text;
   color: transparent;
   transform: scale(1.8);
 }
-.home-tab-image-active{
+
+.home-tab-image-active {
   width: 30rpx;
   height: 70rpx;
   position: absolute;
   top: -30rpx;
-  left: 5rpx;
-  z-index: 99;
+  left: 15rpx;
   transform: scale(0);
-  transition: all .3s cubic-bezier(1,-0.48,.02,1.49);
+  transition: all .3s cubic-bezier(1, -0.48, .02, 1.49);
 }
-.home-tab-image-active-hover{
+
+.home-tab-image-active-hover {
   transform: scale(1);
 }
 
@@ -275,7 +276,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 30rpx;
+  margin: 20rpx;
 }
 
 .home-title .home-title-left {
@@ -294,17 +295,25 @@
   font-size: 25rpx;
   color: #000000;
 }
+
+.home-form-title {
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
 /* 健康记录登记 */
-.health-record{
+.health-record {
   display: flex;
   flex-direction: column;
   color: #333333;
 }
-.health-input{
+
+.health-input {
   border-bottom: solid 1rpx #a5a5a5;
   padding: 5rpx 8rpx;
 }
-.health-uploadImg{
+
+.health-uploadImg {
   display: flex;
   width: 100%;
   height: 100%;
@@ -312,20 +321,45 @@
   justify-content: center;
   margin: 50rpx 0;
 }
-.health-uploadImg .iconfont{
+
+.health-uploadImg .iconfont {
   font-size: 130rpx;
   color: #bbbbbb;
 }
-.recordBtn{
+
+.recordBtn {
   background-color: #dac400 !important;
   margin: 30rpx;
   letter-spacing: 10rpx;
   color: rgb(255, 255, 255) !important;
 }
-.health-checkbox{
+
+.health-checkbox {
   padding: 20rpx 0;
 }
-.health-checkbox-item{
+
+.health-checkbox-item {
   padding-right: 10rpx;
-  
+}
+
+/* 网格登记 */
+.grid-record {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-radio-item {
+  display: flex;
+  padding: 15rpx 5rpx;
+  border-bottom: solid 1rpx #d8d8d8;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.grid-record-textarea {
+  padding: 20rpx;
+  border: solid 1rpx #cccccc;
+  border-radius: 10rpx;
+  margin: 20rpx 0;
+  min-height: 100rpx;
 }

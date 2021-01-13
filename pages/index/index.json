@@ -2,7 +2,8 @@
   "usingComponents": {
     "suspensionBtn": "/components/suspensionBtn/suspensionBtn",
     "homeNav": "/components/homeNav/homeNav",
-    "tagLee":"/components/tag-lee/tag-lee"
+    "tagLee":"/components/tag-lee/tag-lee",
+    "menuTabbar":"/components/menuTabbar/menuTabbar"
   },
   "navigationBarTextStyle": "white"
 }

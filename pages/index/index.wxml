@@ -2,6 +2,8 @@
 <view class="home-main">
   <!-- 悬浮按钮组件 -->
   <!-- <suspensionBtn></suspensionBtn> -->
+  <!-- 底部tabbar组件 -->
+  <menuTabbar></menuTabbar>
 
   <!-- 页头 -->
   <view class="home-head" style="{{homeMenuOpen?'height:43vh':''}}">
@@ -47,7 +49,7 @@
     </view>
   </view>
   <!-- 班线任务轮播图 -->
-  <view class="shift-carousel" style="top:{{navH}}px">
+  <view class="shift-carousel" style="top:{{carouselTop}}px">
     <!-- 班线说明 -->
     <view class="home-title">
       <text class="home-title-left">今日班车</text>
@@ -133,16 +135,16 @@
       </swiper-item>
     </swiper>
   </view>
-  
+
   <view class="home-tab">
     <view class="home-tab-item" bindtap="tabClick" data-params="0">
       <image class="home-tab-image-active {{tabActive == 0 ?'home-tab-image-active-hover':''}}"
-        src="../../static/img/menuIcon.png"></image>
+        src="../../static/img/menuIcon.gif"></image>
       <view class="home-tab-active {{tabActive == 0 ? 'home-tab-active-hover':''}}">健康登记</view>
     </view>
     <view class="home-tab-item" bindtap="tabClick" data-params="1">
       <image class="home-tab-image-active {{tabActive == 1 ?'home-tab-image-active-hover':''}}"
-        src="../../static/img/menuIcon.png"></image>
+        src="../../static/img/menuIcon.gif"></image>
       <view class="home-tab-active {{tabActive == 1 ? 'home-tab-active-hover':''}}">网格登记</view>
     </view>
     <!-- <view class="home-tab-item" bindtap="tabClick" data-params="2">
@@ -179,42 +181,42 @@
 
     <!-- 网格登记 -->
     <view class="grid-record" hidden="{{tabActive == 0}}">
-      <text>本人是否出格</text>
-      <checkbox-group>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+      <view class="home-form-title">本人是否出格</view>
+      <radio-group>
+        <label class="grid-radio-item">
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
           <text>是</text>
         </label>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+        <label class="grid-radio-item">
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
           <text>否</text>
         </label>
-      </checkbox-group>
-      <text>是否接触非本地人员</text>
-      <checkbox-group>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+      </radio-group>
+      <view class="home-form-title">是否接触非本地人员</view>
+      <radio-group>
+        <label class="grid-radio-item">
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
           <text>是</text>
         </label>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+        <label class="grid-radio-item">
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
           <text>否</text>
         </label>
-      </checkbox-group>
-
-      <text>即将接触外来人员</text>
-      <checkbox-group>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+      </radio-group>
+      <view class="home-form-title">即将接触外来人员</view>
+      <radio-group>
+        <label class="grid-radio-item">
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
           <text>是</text>
         </label>
-        <label class="grid-checkbox-item">
-          <checkbox style="transform:scale(.8)" color="#dda200" />
+        <label class="grid-radio-item">
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
           <text>否</text>
         </label>
-      </checkbox-group>
-      <view>
-        <!-- <textarea placeholder="请输入特殊情况备注信息"/> -->
+      </radio-group>
+      <view class="home-form-title">其他情况说明</view>
+      <view class="grid-record-textarea">
+        <textarea placeholder="请输入特殊情况说明" auto-height="true"/>
       </view>
 
       <button class="recordBtn" type="primary">登记</button>
