@@ -14,13 +14,18 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    menuCurrent:1
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    menuClick(e){
+      console.log(e.currentTarget.dataset.params)
+      this.setData({
+        menuCurrent:e.currentTarget.dataset.params
+      })
+    }
   }
 })

@@ -1,37 +1,15 @@
 <!--components/menuTabbar/menuTabbar.wxml-->
 <view class="menuTabbar-main">
-  <!-- <view class="tabbar-item">
+  <view class="tabbar-item {{menuCurrent==0?'tabbar-item-active':''}} " bindtap="menuClick" data-params='0'>
     <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>出生证明</text>
+    <text>首页</text>
   </view>
-  <view class="tabbar-item">
+  <view class="tabbar-item {{menuCurrent==1?'tabbar-item-active':''}} " bindtap="menuClick" data-params='1'>
     <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>成长日记</text>
+    <text>班次</text>
   </view>
-  <view class="tabbar-item tabbar-item-active">
+  <view class="tabbar-item {{menuCurrent==2?'tabbar-item-active':''}} " bindtap="menuClick" data-params='2'>
     <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>在线咨询</text>
-  </view>
-  <view class="tabbar-item">
-    <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>孕婴学院</text>
-  </view>
-  <view class="tabbar-item">
-    <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>个人中心</text>
-  </view> -->
-</view>
-<view class="tabbar-main-another">
-  <!-- 左侧部分 -->
-  <view class="tabbar-leftMenu">
-
-  </view>
-  <!-- 凸起部分 -->
-  <view class="tabbar-bigMenu">
-
-  </view>
-  <!-- 右侧部分 -->
-  <view class="tabbar-rightMenu">
-
+    <text>我的</text>
   </view>
 </view>
