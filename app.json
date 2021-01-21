@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/login/login",
-    "pages/mapDemo/mapDemo"
+    "pages/mapDemo/mapDemo",
+    "pages/my/my"
   ],
   "permission": {
     "scope.userLocation": {

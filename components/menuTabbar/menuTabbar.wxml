@@ -1,15 +1,12 @@
 <!--components/menuTabbar/menuTabbar.wxml-->
-<view class="menuTabbar-main">
+<view class="menuTabbar-main" style="background-image: url(http://pic.51yuansu.com/pic/cover/00/12/36/5781112ac56ef_610.jpg)">
   <view class="tabbar-item {{menuCurrent==0?'tabbar-item-active':''}} " bindtap="menuClick" data-params='0'>
-    <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>首页</text>
+    <text class="tabbar-item-text">首页</text>
   </view>
   <view class="tabbar-item {{menuCurrent==1?'tabbar-item-active':''}} " bindtap="menuClick" data-params='1'>
-    <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>班次</text>
+    <text class="tabbar-item-text">班次</text>
   </view>
   <view class="tabbar-item {{menuCurrent==2?'tabbar-item-active':''}} " bindtap="menuClick" data-params='2'>
-    <image class="tabbarIcon-Img" src="../../static/img/icon_home.png"></image>
-    <text>我的</text>
+    <text class="tabbar-item-text">我的</text>
   </view>
 </view>
