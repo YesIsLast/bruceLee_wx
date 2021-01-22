@@ -8,5 +8,5 @@
     <button type="primary" bindtap="mapMoving">小程序平滑移动</button> -->
   </view>
   <!-- 底部tabbar组件 -->
-  <menuTabbar></menuTabbar>
+  <menuTabbar current="{{1}}"></menuTabbar>
 </view>

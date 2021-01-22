@@ -75,7 +75,6 @@ Page({
   },
   // 轮播动画切换结束事件
   bindanimationfinish(e) {
-    console.log(e.detail)
     // 判断当前轮播图所执行得动画
     setTimeout(() => {
       if (e.detail.current == 1) {

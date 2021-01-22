@@ -7,14 +7,26 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    // 组件默认显示下标
+    current: {
+      type: Number,
+      value: 0
+    }
+  },
+  lifetimes: {
+    ready: function () {
+      // 获取组件传参，并更新菜单选中项
+      this.setData({
+        menuCurrent: this.properties.current
+      })
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    menuCurrent: 1
+    menuCurrent: 0
   },
 
   /**
