@@ -22,7 +22,7 @@
 			</view> -->
 			<!-- 隐私政策 -->
 			<view class="login-footer login-text-white">
-				<checkbox value="cb" checked="true" color="#FCDF44" style="transform:scale(0.8);" />已同意《汇星
+				<checkbox value="cb" checked="true" color="#FCDF44" style="transform:scale(0.8);" />已同意《
 				<text class="login-text-blue">用户服务协议</text>及
 				<text class="login-text-blue">隐私政策</text>》
 			</view>

@@ -67,7 +67,7 @@ Page({
    * 登录方法
    */
   loginFun:function(){
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/index/index',
       complete:function(com){
         // console.log(com)
