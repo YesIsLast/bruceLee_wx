@@ -1,5 +1,6 @@
 <!--pages/my/my.wxml-->
 <view>
   <!-- 底部tabbar组件 -->
-  <menuTabbar current="{{2}}"></menuTabbar>
+  <!-- <menuTabbar current="{{2}}"></menuTabbar> -->
+  <custom_tabbar current="{{2}}"></custom_tabbar>
 </view>

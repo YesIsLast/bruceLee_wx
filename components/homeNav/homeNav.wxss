@@ -1,7 +1,7 @@
 /* components/homeNav.wxss */
 .homeNav-main {
   z-index: 99;
-  background-color: #333333; 
+  background-color: #202020; 
   width: 100%;
   position: fixed;
   top: 0;
@@ -25,7 +25,7 @@
 }
 
 .homeNav-search {
-  background-color: #575757;
+  background-color: #333333;
   border-radius: 30rpx;
   padding: 0 20rpx 0 20rpx;
   height: 100%;

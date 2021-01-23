@@ -10,7 +10,7 @@
 .home-head {
   width: 100vw;
   height: 21vh;
-  background-color: #333333;
+  background-color: #202020;
   border-bottom-left-radius: 20vw 4vh;
   border-bottom-right-radius: 20vw 4vh;
   z-index: 99;

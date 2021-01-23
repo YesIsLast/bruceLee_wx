@@ -1,0 +1,9 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<cover-view class="tab-bar">
+  <cover-image class="tab-bar-bgi" src="http://pic.51yuansu.com/pic/cover/00/12/36/5781112ac56ef_610.jpg"></cover-image>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}"
+    bindtap="switchTab">
+    <cover-view style="{{selected == index?'transform:scale(1.3);color: #ffffff':'color: #9e9e9e'}}">{{item.text}}
+    </cover-view>
+  </cover-view>
+</cover-view>

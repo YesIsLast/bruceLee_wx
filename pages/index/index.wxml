@@ -3,7 +3,8 @@
   <!-- 悬浮按钮组件 -->
   <!-- <suspensionBtn></suspensionBtn> -->
   <!-- 底部tabbar组件 -->
-  <menuTabbar current="{{0}}"></menuTabbar>
+  <!-- <menuTabbar current="{{0}}"></menuTabbar> -->
+  <custom_tabbar current="{{0}}"></custom_tabbar>
 
   <!-- 页头 -->
   <view class="home-head" style="{{homeMenuOpen?'height:43vh':''}}">
