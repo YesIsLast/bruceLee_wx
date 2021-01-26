@@ -3,4 +3,10 @@
   <!-- 底部tabbar组件 -->
   <!-- <menuTabbar current="{{2}}"></menuTabbar> -->
   <custom_tabbar current="{{2}}"></custom_tabbar>
+
+  <!-- 页头 -->
+
+  <!-- 功能列表 -->
+
+
 </view>
