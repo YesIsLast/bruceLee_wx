@@ -4,9 +4,31 @@
   <!-- <menuTabbar current="{{2}}"></menuTabbar> -->
   <custom_tabbar current="{{2}}"></custom_tabbar>
 
+  <image class="myBackground" mode="aspectFill" src="../../static/img/myBackground.jpg"></image>
   <!-- 页头 -->
+  <view class="my-main">
+    <!-- 个人信息部分 -->
+    <view class="my-userInfo">
+      <image class="my-headImg" src="../../static/img/小李同学呢.png"></image>
+      <view class="my-userInfo-setting">
+        <view class="my-userInfo-editorBtn">修改</view>
+        <view class="my-userInfo-settingBtn"><text class="iconfont iconset-"></text></view>
+      </view>
+      <!-- 用户名 -->
+      <view class="my-username">
+        <text class="my-username-master">小李同学不在</text>
+        <text class="my-username-branch">这家伙很懒，还没有签名</text>
+      </view>
+    </view>
+    <!-- 内容分隔线 -->
+    <view class="my-divider-line"></view>
+    <!-- 个人中心菜单列表部分 -->
+    <view class="my-userCenter">
+
+    </view>
+  </view>
+
 
   <!-- 功能列表 -->
-
 
 </view>

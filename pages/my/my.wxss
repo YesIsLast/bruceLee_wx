@@ -1,1 +1,95 @@
 /* pages/my/my.wxss */
+/* 用户背景图片 */
+.myBackground {
+  height: 50vh;
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+}
+
+.my-main {
+  height: 80vh;
+  width: 100vw;
+  border-top-left-radius: 50rpx;
+  border-top-right-radius: 50rpx;
+  background-color: #ffffff;
+  z-index: 1;
+  transform: translateY(20vh);
+  display: flex;
+  flex-direction: column;
+}
+
+.my-userInfo {
+  position: relative;
+  padding: 50rpx 50rpx 50rpx 80rpx;
+}
+
+.my-headImg {
+  height: 220rpx;
+  width: 220rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx 3rpx #aaaaaa;
+  position: absolute;
+  top: -90rpx;
+}
+
+.my-userInfo-setting {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.my-userInfo-setting .my-userInfo-editorBtn {
+  border: 1rpx solid #c0c0c0;
+  text-align: center;
+  padding: 10rpx 80rpx;
+  height: 50rpx;
+  border-radius: 50rpx;
+  margin: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-userInfo-setting .my-userInfo-settingBtn {
+  height: 50rpx;
+  width: 50rpx;
+  border: 1rpx solid #c0c0c0;
+  padding: 10rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20rpx;
+}
+
+.my-userInfo-settingBtn .iconfont {
+  font-size: 40rpx;
+}
+
+.my-username {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30rpx;
+}
+
+.my-username-master {
+  font-size: 40rpx;
+  font-weight: 700;
+  padding: 5rpx 0;
+}
+
+.my-username-branch {
+  font-size: 30rpx;
+  color: #aaaaaa;
+  padding: 5rpx 0;
+}
+
+/* 内容区域分隔线 */
+.my-divider-line {
+  width: 100%;
+  height: 30rpx;
+  background-color: #ececec;
+}
