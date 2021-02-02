@@ -4,12 +4,12 @@
   <!-- <menuTabbar current="{{2}}"></menuTabbar> -->
   <custom_tabbar current="{{2}}"></custom_tabbar>
 
-  <image class="myBackground" mode="aspectFill" src="../../static/img/myBackground.jpg"></image>
+  <image class="myBackground" mode="aspectFill" src="{{myBackgroundSrc}}"></image>
   <!-- 页头 -->
-  <view class="my-main">
+  <view class="my-main {{myMenuOpen?'my-main-open':''}}">
     <!-- 个人信息部分 -->
-    <view class="my-userInfo">
-      <image class="my-headImg" src="../../static/img/小李同学呢.png"></image>
+    <view class="my-userInfo" bindtouchstart='touchMenuStart' bindtouchmove='touchMenuMove' bindtouchend='touchMenuEnd'>
+      <image class="my-headImg" src="../../static/img/head2.jpg"></image>
       <view class="my-userInfo-setting">
         <view class="my-userInfo-editorBtn">修改</view>
         <view class="my-userInfo-settingBtn"><text class="iconfont iconset-"></text></view>
@@ -21,11 +21,42 @@
       </view>
     </view>
     <!-- 内容分隔线 -->
-    <view class="my-divider-line"></view>
+    <!-- <view class="my-divider-line"></view> -->
     <!-- 个人中心菜单列表部分 -->
     <view class="my-userCenter">
-
+      <view class="my-menu-list">
+        <view class="my-menu-list-item" bindtap="changeMyBackground">
+          <text><text class="iconfont iconfenxiangfengmian_tupian list-icon"></text>修改封面图片</text>
+          <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item">
+          <text><text class="iconfont iconyejianmoshi list-icon"></text>夜间模式</text>
+          <view class="my-menu-list-item-content">
+            <switch color="#f0e800" checked="{{themeModeChecked}}" bindchange="themeModeChange" />
+          </view>
+        </view>
+        <view class="my-menu-list-item">
+          <text><text class="iconfont iconyinsizhengce list-icon"></text>隐私政策</text>
+          <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item">
+          <text><text class="iconfont iconbanben list-icon"></text>检查更新</text>
+          <view class="my-menu-list-item-content">V1.0.0.0<text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item">
+          <text><text class="iconfont iconziyuan25 list-icon"></text>在线客服</text>
+          <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item">
+          <text><text class="iconfont iconfankui2 list-icon"></text>用户反馈</text>
+          <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
+        </view>
+      </view>
+      <!-- 内容分隔线 -->
+      <!-- <view class="my-divider-line"></view> -->
+      <button type="default" id="logoutBtn">退出登录</button>
     </view>
+
   </view>
 
 

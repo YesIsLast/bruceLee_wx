@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "menuTabbar": "/components/menuTabbar/menuTabbar",
-    "custom_tabbar":"/components/custom-tab-bar/index"
-  }
+    "custom_tabbar": "/components/custom-tab-bar/index"
+  },
+  "navigationBarTextStyle": "white"
 }

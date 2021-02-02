@@ -7,5 +7,9 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+/* 引入iconfont图标库 */
 @import "./static/iconfont/iconfont.wxss";
+/* 引入全局公用样式库 */
+@import "./static/css/lee.wxss";
