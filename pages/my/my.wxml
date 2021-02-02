@@ -41,7 +41,7 @@
         </view>
         <view class="my-menu-list-item">
           <text><text class="iconfont iconbanben list-icon"></text>检查更新</text>
-          <view class="my-menu-list-item-content">V1.0.0.0<text class="iconfont iconright"></text></view>
+          <view class="my-menu-list-item-content">V1.0.2<text class="iconfont iconright"></text></view>
         </view>
         <view class="my-menu-list-item">
           <text><text class="iconfont iconziyuan25 list-icon"></text>在线客服</text>
