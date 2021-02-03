@@ -1,3 +1,4 @@
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -13,7 +14,28 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+/**
+ * 获取用户授权设置
+ * 可参考下方文档来确定要检查的权限
+ * https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html
+ * @param {string} authName 权限名称  
+ */
+const getUserSetting = authName => {
+  wx.getSetting({
+    success: function (res) {
+      if (res.authSetting[authName]) {
+        console.log("用户授权了" + authName);
+        return true
+      } else {
+        //用户没有授权
+        console.log("用户没有授权" + authName);
+        return false
+      }
+    }
+  });
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getUserSetting: getUserSetting
 }

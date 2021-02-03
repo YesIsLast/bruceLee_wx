@@ -54,7 +54,7 @@
       </view>
       <!-- 内容分隔线 -->
       <!-- <view class="my-divider-line"></view> -->
-      <button type="default" id="logoutBtn">退出登录</button>
+      <button type="default" id="logoutBtn" bindtap="logout">退出登录</button>
     </view>
 
   </view>

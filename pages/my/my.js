@@ -19,6 +19,15 @@ Page({
       })
     }, 500)
   },
+  // 退出登录
+  logout:function(e){
+    wx.reLaunch({
+      url: '/pages/login/login',
+      complete: function (com) {
+        // console.log(com)
+      }
+    })
+  },
   // 菜单下滑
   touchMenuStart: function (e) {
     let sx = e.touches[0].pageX

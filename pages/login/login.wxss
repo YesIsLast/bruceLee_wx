@@ -44,6 +44,11 @@
 
 .login-btn {
   background-color: #dac400 !important;
+  border-radius: 50rpx;
+  width: 70vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 30rpx;
   letter-spacing: 10rpx;
   color: rgb(255, 255, 255) !important;

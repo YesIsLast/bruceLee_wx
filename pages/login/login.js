@@ -1,6 +1,6 @@
 // pages/login/login.js
+var utils = require('../../utils/util.js');
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -63,13 +63,31 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 微信授权登陆
+  bindGetUserInfo: function (e) {
+    console.log(e.detail.userInfo)
+    if(utils.getUserSetting("scope.userInfo")){
+      wx.login({
+        success(res) {
+          if (res.code) {
+            console.log('登录成功！' + JSON.stringify(res))
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
+        }
+      })
+    }else{
+      
+    }
+    
+  },
   /**
    * 登录方法
    */
-  loginFun:function(){
+  loginFun: function () {
     wx.switchTab({
       url: '/pages/index/index',
-      complete:function(com){
+      complete: function (com) {
         // console.log(com)
       }
     })
