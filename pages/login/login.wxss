@@ -33,7 +33,8 @@
   z-index: 0;
   position: absolute;
 }
-.login-form{
+
+.login-form {
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -53,27 +54,45 @@
   letter-spacing: 10rpx;
   color: rgb(255, 255, 255) !important;
 }
-.login-text-blue{
+
+.login-text-blue {
   color: #FCDF44;
 }
-.login-text-white{
-  color: white;
+
+.login-text-white {
+  color: #cccccc;
 }
-.login-footer{
+
+.login-footer {
   font-size: 28rpx;
 }
-.login-form-row{
+
+.login-form-row {
   color: #FCDF44;
   border-bottom: solid 2rpx #FCDF44;
   width: 100%;
   margin-bottom: 50rpx;
 }
-.login-form-text{
+
+.login-form-text {
   letter-spacing: 5rpx;
 }
-.login-form-input{
+
+.login-form-input {
   padding: 10rpx;
 }
-.login-remember{
+
+.login-remember {
   margin-bottom: 10rpx;
+}
+
+.otherLoginLine {
+  border-bottom: solid 1rpx #cccccc;
+  flex: 2;
+  height: 20rpx;
+}
+
+.otherLoginLine-text {
+  padding: 0 30rpx;
+  color: #cccccc;
 }

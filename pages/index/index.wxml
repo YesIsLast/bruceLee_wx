@@ -18,11 +18,7 @@
       </view>
       <view class="menuList-item">
         <text class="iconfont iconrenwu"></text>
-        <text>申请</text>
-      </view>
-      <view class="menuList-item">
-        <text class="iconfont iconwujiaoxingxingxing"></text>
-        <text>班线收藏</text>
+        <text>工资记录</text>
       </view>
       <view class="menuList-item">
         <text class="iconfont iconbus"></text>
@@ -35,10 +31,6 @@
       <view class="menuList-item" bindtap="menuJump" data-params='menu1'>
         <text class="iconfont iconmap1"></text>
         <text>点平滑移动</text>
-      </view>
-      <view class="menuList-item" wx:for="{{6}}" wx:key="*this">
-        <text class="iconfont iconwujiaoxingxingxing"></text>
-        <text>班线收藏</text>
       </view>
     </view>
 
@@ -185,40 +177,40 @@
       <view class="home-form-title">本人是否出格</view>
       <radio-group>
         <label class="grid-radio-item">
-          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200" />
           <text>是</text>
         </label>
         <label class="grid-radio-item">
-          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200" />
           <text>否</text>
         </label>
       </radio-group>
       <view class="home-form-title">是否接触非本地人员</view>
       <radio-group>
         <label class="grid-radio-item">
-          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200" />
           <text>是</text>
         </label>
         <label class="grid-radio-item">
-          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200" />
           <text>否</text>
         </label>
       </radio-group>
       <view class="home-form-title">即将接触外来人员</view>
       <radio-group>
         <label class="grid-radio-item">
-          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="是" checked="false" style="transform:scale(.8)" color="#dda200" />
           <text>是</text>
         </label>
         <label class="grid-radio-item">
-          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200"/>
+          <radio value="否" checked="true" style="transform:scale(.8)" color="#dda200" />
           <text>否</text>
         </label>
       </radio-group>
       <view class="home-form-title">其他情况说明</view>
       <view class="grid-record-textarea">
-        <textarea placeholder="请输入特殊情况说明" auto-height="true"/>
-      </view>
+        <textarea placeholder="请输入特殊情况说明" auto-height="true" />
+        </view>
 
       <button class="recordBtn" type="primary">登记</button>
     </view>

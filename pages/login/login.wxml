@@ -24,16 +24,25 @@
 			<!-- 隐私政策 -->
 			<view class="login-footer login-text-white">
 				<checkbox value="cb" checked="true" color="#FCDF44" style="transform:scale(0.8);" />阅读并同意《
-				<text class="login-text-blue">用户服务协议</text>及
+				<text class="login-text-blue">用户服务协议</text> 及
 				<text class="login-text-blue">隐私政策</text>》
 			</view>
 			<!-- 登录按钮 -->
 			<button class="login-btn" type="primary" bindtap="loginFun">登录</button>
-			<view>
-				微信一键登录
+
+			<!-- 快捷登录 -->
+			<view style="display:flex;flex-direction: column;margin-top:50rpx">
+				<view style="display:flex;position:relative">
+					<view class="otherLoginLine"></view>
+					<view class="otherLoginLine-text">快速登录</view>
+					<view class="otherLoginLine"></view>
+				</view>
+				<view style="text-align:center;margin-top:30rpx;">
+					<button class='fastLogin' type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'><text
+							class="iconfont iconwechat" style="font-size:50rpx;color:#9EEA6A"></text></button>
+				</view>
 			</view>
 
-			<button class='login-btn' type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>授权登录</button>
 		</view>
 	</view>
 </view>
