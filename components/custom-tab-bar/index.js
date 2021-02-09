@@ -32,7 +32,6 @@ Component({
       wx.switchTab({
         url: url,
         success: function (res) {
-          console.log(res)
         },
         fail: function (err) {
           console.log(err)

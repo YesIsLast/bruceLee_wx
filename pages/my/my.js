@@ -13,13 +13,13 @@ Page({
     // 当前登录的用户信息
     userInfo: {
       "code": "", // 微信登录成功返回码，
-      "nickName": "他叫李嘉琪",
-      "gender": 1,
+      "nickName": "未登录",
+      "gender": 0,
       "language": "zh_CN",
       "city": "",
       "province": "",
       "country": "Iraq",
-      "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83ept2R8n69uaGj8doxRBNXPasMYuqiaROLEyKr0bwib76Wj8j5XTOFNjZFicJCaiaGQOtibeEFIrza1icTOg/132"
+      "avatarUrl": ""
     }
   },
   onReady() {
@@ -30,23 +30,25 @@ Page({
       })
     }, 500)
     // 获取当前登录用户信息
-    let that = this
-    wx.getStorageSync({
-      key: 'wxUserInfo',
-      success(res) {
-        console.log(res.data)
-        that.setData({
-          userInfo: res.data
+    try {
+      var userInfo = wx.getStorageSync('wxUserInfo')
+      if (userInfo) {
+        // Do something with return value
+        this.setData({
+          userInfo: JSON.parse(userInfo)
         })
-      }, fail(err) {
-        wx.showToast({
-          title: '用户信息获取失败',
-          icon: "none"
-        })
-        that.logout()
       }
-    })
-
+    } catch (err) {
+      // Do something when catch error
+      console.error(err)
+      wx.showToast({
+        title: '用户信息获取失败',
+        icon: "none"
+      })
+      setTimeout(() => {
+        this.logout()
+      }, 1000);
+    }
   },
   // 退出登录
   logout: function (e) {

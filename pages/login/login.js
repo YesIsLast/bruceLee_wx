@@ -77,7 +77,7 @@ Page({
           success(res) {
             wx.hideLoading()
             if (res.code) {
-              userStorage.wxLoginCode = res.code
+              userStorage.code = res.code
               wx.setStorage({
                 key: "wxUserInfo",
                 data: JSON.stringify(userStorage)
