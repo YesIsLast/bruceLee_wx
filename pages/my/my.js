@@ -10,6 +10,17 @@ Page({
     myMenuOpen: false, // 我的菜单是否展开
     myBackgroundSrc: "../../static/img/myBackground.jpg", // 封面图片地址
     themeModeChecked: false, // 主题模式开关切换
+    // 当前登录的用户信息
+    userInfo: {
+      "code": "", // 微信登录成功返回码，
+      "nickName": "他叫李嘉琪",
+      "gender": 1,
+      "language": "zh_CN",
+      "city": "",
+      "province": "",
+      "country": "Iraq",
+      "avatarUrl": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83ept2R8n69uaGj8doxRBNXPasMYuqiaROLEyKr0bwib76Wj8j5XTOFNjZFicJCaiaGQOtibeEFIrza1icTOg/132"
+    }
   },
   onReady() {
     // 页面准备完成执行我的页面动画上推效果
@@ -18,13 +29,31 @@ Page({
         myMenuOpen: true
       })
     }, 500)
+    // 获取当前登录用户信息
+    let that = this
+    wx.getStorageSync({
+      key: 'wxUserInfo',
+      success(res) {
+        console.log(res.data)
+        that.setData({
+          userInfo: res.data
+        })
+      }, fail(err) {
+        wx.showToast({
+          title: '用户信息获取失败',
+          icon: "none"
+        })
+        that.logout()
+      }
+    })
+
   },
   // 退出登录
-  logout:function(e){
+  logout: function (e) {
     wx.reLaunch({
       url: '/pages/login/login',
       complete: function (com) {
-        // console.log(com)
+        wx.clearStorage()
       }
     })
   },

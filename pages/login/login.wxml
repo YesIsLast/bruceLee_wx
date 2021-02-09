@@ -10,11 +10,11 @@
 		<view class="login-form">
 			<view class="login-form-row">
 				<view class="login-form-text">用户名</view>
-				<input class="login-form-input" type="text" />
+				<input class="login-form-input" type="text" placeholder="请输入用户名"/>
 			</view>
 			<view class="login-form-row">
 				<view class="login-form-text">密码</view>
-				<input class="login-form-input" type="text" />
+				<input class="login-form-input" type="text" placeholder="请输入密码"/>
 			</view>
 			<!-- 记住密码 -->
 			<!-- <view class="login-remember">
@@ -28,7 +28,7 @@
 				<text class="login-text-blue">隐私政策</text>》
 			</view>
 			<!-- 登录按钮 -->
-			<button class="login-btn" type="primary" bindtap="loginFun">登录</button>
+			<button class="login-btn" type="default" bindtap="loginFun">登录</button>
 
 			<!-- 快捷登录 -->
 			<view style="display:flex;flex-direction: column;margin-top:50rpx">
@@ -38,7 +38,7 @@
 					<view class="otherLoginLine"></view>
 				</view>
 				<view style="text-align:center;margin-top:30rpx;">
-					<button class='fastLogin' type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'><text
+					<button class="fastLogin" type='primary' open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'><text
 							class="iconfont iconwechat" style="font-size:50rpx;color:#9EEA6A"></text></button>
 				</view>
 			</view>

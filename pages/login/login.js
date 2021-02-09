@@ -64,22 +64,36 @@ Page({
 
   },
   // 微信授权登陆
-  bindGetUserInfo: function (e) {
-    console.log(e.detail.userInfo)
-    if(utils.getUserSetting("scope.userInfo")){
-      wx.login({
-        success(res) {
-          if (res.code) {
-            console.log('登录成功！' + JSON.stringify(res))
-          } else {
-            console.log('登录失败！' + res.errMsg)
+  bindGetUserInfo(e) {
+    console.log("当前登录用户信息", e.detail.userInfo)
+    let userStorage = e.detail.userInfo
+    let that = this
+    wx.showLoading({
+      title: '登录中...',
+    })
+    utils.getUserSetting("scope.userInfo").then(res => {
+      if (res) {
+        wx.login({
+          success(res) {
+            wx.hideLoading()
+            if (res.code) {
+              userStorage.wxLoginCode = res.code
+              wx.setStorage({
+                key: "wxUserInfo",
+                data: JSON.stringify(userStorage)
+              })
+              that.loginFun()
+            } else {
+              wx.showToast({
+                title: '微信授权登录失败',
+                icon: "none"
+              })
+            }
           }
-        }
-      })
-    }else{
-      
-    }
-    
+        })
+      }
+    })
+
   },
   /**
    * 登录方法

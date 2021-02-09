@@ -21,18 +21,21 @@ const formatNumber = n => {
  * @param {string} authName 权限名称  
  */
 const getUserSetting = authName => {
-  wx.getSetting({
-    success: function (res) {
-      if (res.authSetting[authName]) {
-        console.log("用户授权了" + authName);
-        return true
-      } else {
-        //用户没有授权
-        console.log("用户没有授权" + authName);
-        return false
+  return new Promise((resolve, reject)=>{
+    wx.getSetting({
+      success: function (res) {
+        if (res.authSetting[authName]) {
+          console.log("用户授权了" + JSON.stringify(res));
+          resolve(true)
+        } else {
+          //用户没有授权
+          console.log("用户没有授权" + authName);
+          reject(false)
+        }
       }
-    }
-  });
+    });
+  })
+  
 }
 
 module.exports = {

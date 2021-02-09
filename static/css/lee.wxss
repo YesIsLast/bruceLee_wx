@@ -7,5 +7,15 @@
 /* 盒子布局样式 */
 
 /* 颜色主题 */
-
+.lee-color-blue-1{
+  color: #29B4FF;
+}
+.lee-color-pink-1{
+  color: #eb4288;
+}
 /* 样式定位 */
+
+/* 边距 */
+.lee-padding-left-10{
+  padding-left: 10rpx;
+}

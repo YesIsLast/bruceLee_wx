@@ -58,6 +58,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #5c5c5c;
+}
+.my-userInfo-editorBtn .iconfont{
+  position: relative;
+  top: 5rpx;
+  right: 10rpx;
+  font-size: 25rpx;
 }
 
 .my-userInfo-setting .my-userInfo-settingBtn {

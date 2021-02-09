@@ -9,14 +9,15 @@
   <view class="my-main {{myMenuOpen?'my-main-open':''}}">
     <!-- 个人信息部分 -->
     <view class="my-userInfo" bindtouchstart='touchMenuStart' bindtouchmove='touchMenuMove' bindtouchend='touchMenuEnd'>
-      <image class="my-headImg" src="../../static/img/head2.jpg"></image>
+      <image class="my-headImg" src="{{userInfo.avatarUrl?userInfo.avatarUrl:'../../static/img/head3.jpg'}}"></image>
       <view class="my-userInfo-setting">
-        <view class="my-userInfo-editorBtn">修改</view>
+        <view class="my-userInfo-editorBtn"><text class="iconfont iconxiugai"></text>修改</view>
         <view class="my-userInfo-settingBtn"><text class="iconfont iconset-"></text></view>
       </view>
       <!-- 用户名 -->
       <view class="my-username">
-        <text class="my-username-master">小李同学不在</text>
+        <text class="my-username-master">{{userInfo.nickName}}<text
+            class="lee-padding-left-10 iconfont {{userInfo.gender == 1?'iconnan lee-color-blue-1':'icondian lee-color-pink-1'}}"></text></text>
         <text class="my-username-branch">这家伙很懒，还没有签名</text>
       </view>
     </view>
