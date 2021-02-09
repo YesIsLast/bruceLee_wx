@@ -19,7 +19,7 @@ Page({
       "city": "",
       "province": "",
       "country": "Iraq",
-      "avatarUrl": ""
+      "avatarUrl": null
     }
   },
   onReady() {
