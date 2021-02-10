@@ -44,8 +44,10 @@ Page({
               })
               // 设置登录类型
               let event = {
-                detail: {
-                  loginType: 1
+                target:{
+                  dataset:{
+                    logintype:1
+                  }
                 }
               }
               that.loginFun(event)
