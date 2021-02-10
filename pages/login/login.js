@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    username: "",
+    password: ""
   },
 
   /**
@@ -14,54 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // input伪双向绑定
+  bindKeyInput: function (e) {
+    this.setData({
+      [e.target.dataset.vmodel]: e.detail.value
+    })
   },
   // 微信授权登陆
   bindGetUserInfo(e) {
@@ -78,11 +36,19 @@ Page({
             wx.hideLoading()
             if (res.code) {
               userStorage.code = res.code
+              userStorage.loginType = 1
+              userStorage.username = userStorage.nickName
               wx.setStorage({
-                key: "wxUserInfo",
+                key: "userInfo",
                 data: JSON.stringify(userStorage)
               })
-              that.loginFun()
+              // 设置登录类型
+              let event = {
+                detail: {
+                  loginType: 1
+                }
+              }
+              that.loginFun(event)
             } else {
               wx.showToast({
                 title: '微信授权登录失败',
@@ -98,7 +64,50 @@ Page({
   /**
    * 登录方法
    */
-  loginFun: function () {
+  loginFun: function (event) {
+    // 校验登录类型，0、普通登录 1、微信登录
+    if (event.target.dataset.logintype == "0") {
+      console.log(this.data.username, this.data.password)
+      // 登录校验
+      if (this.data.username.length <= 0) {
+        wx.showToast({
+          title: '请输入用户名',
+          icon: "none"
+        })
+        return
+      }
+      if (this.data.username != "admin") {
+        wx.showToast({
+          title: '用户名输入错误',
+          icon: "none"
+        })
+        return
+      }
+      if (this.data.password.length <= 0) {
+        wx.showToast({
+          title: '请输入密码',
+          icon: "none"
+        })
+        return
+      }
+      if (this.data.password != "123321") {
+        wx.showToast({
+          title: '密码输入错误',
+          icon: "none"
+        })
+        return
+      }
+      // 登录成功，用户信息存储
+      wx.setStorage({
+        key: "userInfo",
+        data: JSON.stringify({
+          loginType: 0,
+          username: this.data.username,
+          password: this.data.password
+        })
+      })
+    }
+
     wx.switchTab({
       url: '/pages/index/index',
       complete: function (com) {

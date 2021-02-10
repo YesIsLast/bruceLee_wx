@@ -31,7 +31,7 @@ Page({
     }, 500)
     // 获取当前登录用户信息
     try {
-      var userInfo = wx.getStorageSync('wxUserInfo')
+      var userInfo = wx.getStorageSync('userInfo')
       if (userInfo) {
         // Do something with return value
         this.setData({

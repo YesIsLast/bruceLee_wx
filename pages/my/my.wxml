@@ -16,7 +16,7 @@
       </view>
       <!-- 用户名 -->
       <view class="my-username">
-        <text class="my-username-master">{{userInfo.nickName}}<text
+        <text class="my-username-master">{{userInfo.username || "未登录"}}<text
             class="lee-padding-left-10 iconfont {{userInfo.gender == 1?'iconnan lee-color-blue-1':'icondian lee-color-pink-1'}}"></text></text>
         <text class="my-username-branch">这家伙很懒，还没有签名</text>
       </view>
