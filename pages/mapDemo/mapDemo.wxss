@@ -1,1 +1,14 @@
 /* pages/mapDemo/mapDemo.wxss */
+.xfTitle {
+  margin-top: 20vh;
+  text-align: center;
+  font-weight: 800;
+  font-size: 40rpx;
+}
+
+.xfInput {
+  border: solid 1rpx red;
+  padding: 20rpx;
+  width: 70vw;
+  margin: 50rpx 15vw;
+}

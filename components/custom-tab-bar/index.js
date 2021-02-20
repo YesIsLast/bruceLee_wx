@@ -18,8 +18,8 @@ Component({
       pagePath: "/pages/index/index",
       text: "首页"
     }, {
-      pagePath: "/pages/mapDemo/mapDemo",
-      text: "班次"
+      pagePath: "/pages/projectList/projectList",
+      text: "项目"
     }, {
       pagePath: "/pages/my/my",
       text: "我的"

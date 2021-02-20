@@ -1,0 +1,29 @@
+<!--pages/projectList/projectList.wxml-->
+
+<view class="projectList-main">
+  <view class="projectList-head">
+    <image mode="aspectFill" src="../../static/img/bgi4.png"></image>
+  </view>
+
+  <!-- 项目卡片列表 -->
+  <view class="projectList-content">
+    <!-- 
+    <input type="text" placeholder="search" /><view class="content-item">
+      <image class="item-image"></image>
+      <text class="item-name">地图点分段移动</text>
+    </view>
+    <view class="content-item">
+      <image class="item-image"></image>
+      <text class="item-name">讯飞语音合成</text>
+    </view>
+    <view class="content-item" wx:for="{{4}}" wx:for-item="item" wx:for-index="index" wx:key="*this">
+      <image class="item-image"></image>
+      <text class="item-name">地图点分段移动</text>
+    </view> -->
+  </view>
+</view>
+
+
+<!-- 底部tabbar组件 -->
+<!-- <menuTabbar current="{{1}}"></menuTabbar> -->
+<custom_tabbar current="{{1}}"></custom_tabbar>

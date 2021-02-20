@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/projectList/projectList",
+    "pages/mapDemo/mapDemo",
     "pages/login/login",
     "pages/index/index",
-    "pages/my/my",
-    "pages/mapDemo/mapDemo"
+    "pages/my/my"
   ],
   "permission": {
     "scope.userLocation": {
@@ -18,8 +19,8 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/mapDemo/mapDemo",
-        "text": "班次"
+        "pagePath": "pages/projectList/projectList",
+        "text": "项目"
       },
       {
         "pagePath": "pages/my/my",

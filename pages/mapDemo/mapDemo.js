@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    xfVoice:"讯飞语音合成",
     latitude: 43.886751,
     longitude: 125.346636,
     markers: [
@@ -79,6 +80,19 @@ Page({
       }
     })
     // that.mapMoving("125.346636,43.886751","125.340366,43.883999")
+  },
+  
+  // input伪双向绑定
+  bindKeyInput: function (e) {
+    this.setData({
+      [e.target.dataset.vmodel]: e.detail.value
+    })
+  },
+  concatWS(){
+
+  },
+  xfBtn(){
+    console.log("正在合成语音")
   },
   /**
    * 点平滑移动,每.5秒执行一次路线坐标

@@ -1,0 +1,34 @@
+/* pages/projectList/projectList2.wxss */
+.projectList-main{
+  background-color: rgb(255, 255, 255);
+  
+}
+.projectList-head{
+  height: 40vh;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  position: sticky;
+}
+.projectList-head image{
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+}
+.projectList-content{
+  min-height: 80vh;
+  border-top-right-radius: 50rpx;
+  position: relative;
+  top: -80rpx;
+  background-color: #ffffff;
+  opacity: .5;
+}
+.projectList-content::before{
+  content: "";
+  height: 70rpx;
+  width: 70rpx;
+  background-color: #ffffff;
+  position: absolute;
+  top: -40rpx;
+}

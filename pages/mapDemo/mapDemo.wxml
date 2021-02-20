@@ -1,12 +1,13 @@
 <!--pages/mapDemo/mapDemo.wxml-->
 <view>
-  <map id="myMap" style="width: 100%; height: 500px;" latitude="{{latitude}}" longitude="{{longitude}}"
-    markers="{{markers}}" polyline="{{polyline}}" show-location></map>
-  <view>
-    <button type="primary" bindtap="mapMoving">开始执行</button>
-    <!-- <button type="primary" bindtap="mapMoving">自定义分段移动</button>
-    <button type="primary" bindtap="mapMoving">小程序平滑移动</button> -->
+  <view class="xfTitle">
+    科大讯飞语音合成接口调用示例
   </view>
+  <input class="xfInput" data-vmodel="xfVoice" bindinput="bindKeyInput" value="{{xfVoice}}" type="text" placeholder="请输入" />
+  
+  <button type="primary" bindtap="concatWS">连接服务器</button>
+  
+  <button type="primary" bindtap="xfBtn">合成语音</button>
   <!-- 底部tabbar组件 -->
   <!-- <menuTabbar current="{{1}}"></menuTabbar> -->
   <custom_tabbar current="{{1}}"></custom_tabbar>
