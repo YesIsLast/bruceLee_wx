@@ -4,10 +4,11 @@
   
 }
 .projectList-head{
-  height: 40vh;
+  height: 30vh;
   background-color: rgb(255, 255, 255);
   width: 100%;
   position: sticky;
+  z-index: 1;
 }
 .projectList-head image{
   height: 100%;
@@ -15,20 +16,51 @@
   background-size: 100%;
   position: absolute;
   top: 0;
+  z-index: -1;
 }
-.projectList-content{
-  min-height: 80vh;
-  border-top-right-radius: 50rpx;
-  position: relative;
-  top: -80rpx;
-  background-color: #ffffff;
-  opacity: .5;
+.head-title{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 14rpx;
 }
-.projectList-content::before{
-  content: "";
-  height: 70rpx;
-  width: 70rpx;
-  background-color: #ffffff;
-  position: absolute;
-  top: -40rpx;
+.projectList-head2{
+  display: flex;
+  flex-direction: column;
+}
+.head2-userInfo{
+  border: 1rpx solid #eeeeee;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.head2-userInfo image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 10rpx 1rpx #bebebe;
+  margin-right: 20rpx;
+}
+.head2-username{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.head2-animate{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  background-color: #b8b8b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
