@@ -1,16 +1,18 @@
 /* pages/projectList/projectList2.wxss */
-.projectList-main{
-  background-color: rgb(255, 255, 255);
-  
+.projectList-main {
+  background-color: #eeeeee;
+  padding-bottom: 100rpx;
 }
-.projectList-head{
+
+.projectList-head {
   height: 30vh;
   background-color: rgb(255, 255, 255);
   width: 100%;
   position: sticky;
   z-index: 1;
 }
-.projectList-head image{
+
+.projectList-head image {
   height: 100%;
   width: 100%;
   background-size: 100%;
@@ -18,7 +20,8 @@
   top: 0;
   z-index: -1;
 }
-.head-title{
+
+.head-title {
   height: 100%;
   width: 100%;
   display: flex;
@@ -29,32 +32,37 @@
   color: #ffffff;
   letter-spacing: 14rpx;
 }
-.projectList-head2{
+
+.projectList-head2 {
   display: flex;
   flex-direction: column;
 }
-.head2-userInfo{
-  border: 1rpx solid #eeeeee;
-  border-radius: 20rpx;
+
+.head2-userInfo {
+  border-radius: 20rpx 20rpx 0 0;
   padding: 30rpx;
-  margin: 20rpx;
+  margin: 20rpx 20rpx 0 20rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffffff;
 }
-.head2-userInfo image{
+
+.head2-userInfo image {
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
   box-shadow: 0 0 10rpx 1rpx #bebebe;
   margin-right: 20rpx;
 }
-.head2-username{
+
+.head2-username {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
-.head2-animate{
+
+.head2-animate {
   height: 100rpx;
   width: 100rpx;
   border-radius: 50%;
@@ -63,4 +71,73 @@
   align-items: center;
   justify-content: center;
   color: #ffffff;
+}
+
+.head2-statistics {
+  padding: 10rpx;
+  margin: 0 20rpx;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.statistics-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  border-right: 3rpx solid #b6b6b6;
+}
+
+.statistics-item:last-child {
+  border-right: none;
+}
+
+.statistics-item .item-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #29649b;
+  text-align: center;
+}
+
+.statistics-item .item-content {
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.projectList-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 10rpx;
+}
+
+.project-item {
+  width: calc(50% - 20rpx);
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 8rpx 1rpx #d6d6d6;
+  margin: 10rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+.project-item image {
+  width: 100rpx;
+  height: 100rpx;
+  flex: 1;
+}
+
+.project-item text {
+  text-align: center;
+  flex: 2;
+}
+
+.projectList-content .item-active {
+  position: absolute;
+  right: 10rpx;
+  width: calc(50% - 30rpx);
 }
