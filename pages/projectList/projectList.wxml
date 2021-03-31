@@ -39,7 +39,7 @@
       <image src="../../static/img/head2.jpg"></image>
       <text>零食商城</text>
     </view>
-    <view class="project-item">
+    <view class="project-item" style="height:280rpx">
       <image src="../../static/img/head2.jpg"></image>
       <text>地图</text>
     </view>
@@ -47,7 +47,7 @@
       <image src="../../static/img/head2.jpg"></image>
       <text>客户端</text>
     </view>
-    <view class="project-item item-active" style="top:160rpx">
+    <view class="project-item">
       <image src="../../static/img/head2.jpg"></image>
       <text>聊天</text>
     </view>
@@ -55,7 +55,7 @@
       <image src="../../static/img/head2.jpg"></image>
       <text>聊天</text>
     </view>
-    <view class="project-item item-active" style="top:460rpx">
+    <view class="project-item">
       <image src="../../static/img/head2.jpg"></image>
       <text>聊天</text>
     </view>

@@ -135,9 +135,3 @@
   text-align: center;
   flex: 2;
 }
-
-.projectList-content .item-active {
-  position: absolute;
-  right: 10rpx;
-  width: calc(50% - 30rpx);
-}
