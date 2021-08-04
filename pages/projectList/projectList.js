@@ -20,6 +20,11 @@ Page({
    */
   onReady: function () {
 
+  },
+  // 前往地图 
+  goMap(){
+    wx.navigateTo({
+      url: '/pages/mapDemo/mapDemo',
+    })
   }
-  
 })

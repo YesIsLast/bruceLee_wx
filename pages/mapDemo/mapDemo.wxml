@@ -1,13 +1,6 @@
 <!--pages/mapDemo/mapDemo.wxml-->
 <view>
-  <view class="xfTitle">
-    科大讯飞语音合成接口调用示例
-  </view>
-  <input class="xfInput" data-vmodel="xfVoice" bindinput="bindKeyInput" value="{{xfVoice}}" type="text" placeholder="请输入" />
-  
-  <button type="primary" bindtap="concatWS">连接服务器</button>
-  
-  <button type="primary" bindtap="xfBtn">合成语音</button>
+  <map scale="10" class="map-demo" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" polyline="{{polyline}}"></map>
   <!-- 底部tabbar组件 -->
   <!-- <menuTabbar current="{{1}}"></menuTabbar> -->
   <custom_tabbar current="{{1}}"></custom_tabbar>

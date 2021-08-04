@@ -39,7 +39,7 @@
       <image src="../../static/img/head2.jpg"></image>
       <text>零食商城</text>
     </view>
-    <view class="project-item" style="height:280rpx">
+    <view class="project-item" style="height:280rpx" bindtap="goMap">
       <image src="../../static/img/head2.jpg"></image>
       <text>地图</text>
     </view>
