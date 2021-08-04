@@ -8,7 +8,7 @@ Page({
     carousel_currentBack: false, // 送班动画
     touchS: [0, 0], // 触摸滑动开始坐标
     touchE: [0, 0], // 触摸滑动结束坐标
-    homeMenuOpen:false, // 首页菜单是否展开
+    homeMenuOpen: false, // 首页菜单是否展开
     tabActive: 0, // tab选中项下标
   },
   onLoad: function () {
@@ -25,7 +25,7 @@ Page({
 
   },
   // tab选项卡点击事件
-  tabClick(e){
+  tabClick(e) {
     console.log(e.currentTarget.dataset.params)
     this.setData({
       tabActive: e.currentTarget.dataset.params
@@ -47,20 +47,25 @@ Page({
     let end = this.data.touchE
     console.log(start)
     console.log(end)
+    // 菜单执行操作后，滚动到页面顶部
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
     if (start[1] < end[1] - 50) {
       console.log('下滑展开菜单')
       this.setData({
-        homeMenuOpen:true
+        homeMenuOpen: true
       })
-    } else if (start[1] > end[1] + 50) { 
+    } else if (start[1] > end[1] + 50) {
       console.log('上滑收回菜单')
       this.setData({
-        homeMenuOpen:false
+        homeMenuOpen: false
       })
     } else {
       console.log('静止点击收回菜单')
       this.setData({
-        homeMenuOpen:false
+        homeMenuOpen: false
       })
     }
   },

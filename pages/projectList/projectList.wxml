@@ -37,7 +37,7 @@
   <view class="projectList-content">
     <view class="project-item" style="height:280rpx">
       <image src="../../static/img/head2.jpg"></image>
-      <text>零食商城</text>
+      <text>零食</text>
     </view>
     <view class="project-item" style="height:280rpx" bindtap="goMap">
       <image src="../../static/img/head2.jpg"></image>
