@@ -6,5 +6,6 @@
     "menuTabbar":"/components/menuTabbar/menuTabbar",
     "custom_tabbar":"/components/custom-tab-bar/index"
   },
-  "navigationBarTextStyle": "white"
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom"
 }

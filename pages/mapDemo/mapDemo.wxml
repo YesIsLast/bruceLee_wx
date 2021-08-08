@@ -1,7 +1,8 @@
 <!--pages/mapDemo/mapDemo.wxml-->
 <view>
-  <map scale="10" class="map-demo" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" polyline="{{polyline}}"></map>
+  <map scale="10" class="map-demo" longitude="{{longitude}}" latitude="{{latitude}}"
+   markers="{{markers}}" polyline="{{polyline}}"></map>
   <!-- 底部tabbar组件 -->
   <!-- <menuTabbar current="{{1}}"></menuTabbar> -->
-  <custom_tabbar current="{{1}}"></custom_tabbar>
+  <!-- <custom_tabbar current="{{1}}"></custom_tabbar> -->
 </view>
