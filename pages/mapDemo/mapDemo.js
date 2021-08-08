@@ -2,19 +2,22 @@
 var amapFile = require('../../libs/amap-wx.130');//如：..­/..­/libs/amap-wx.js
 var markersList = require('../../utils/markers').default;
 var myAmapFun = new amapFile.AMapWX({ key: 'b1ecb0a188f2e8ff218310c9cead6f74' });
+// 引入百度语音识别
+var Voice = require("../../libs/QS-baiduyy").default;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    xfVoice: "讯飞语音合成",
+    baiduVoice: "测试语音播报",
     latitude: 43.892608,
     longitude: 125.331293,
     markers: [],
     polyline: []
   },
   onReady: function (e) {
+    Voice(this.data.baiduVoice)
     // 创建地图点平滑移动对象
     this.mapCtx = wx.createMapContext('myMap')
   },
