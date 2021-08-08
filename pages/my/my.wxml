@@ -40,16 +40,20 @@
           <text><text class="iconfont iconyinsizhengce list-icon"></text>隐私政策</text>
           <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
         </view>
-        <view class="my-menu-list-item" bindtap="updateVersion">
-          <text><text class="iconfont iconbanben list-icon"></text>检查更新</text>
-          <view class="my-menu-list-item-content">V{{accountVersion}}<text class="iconfont iconright"></text></view>
-        </view>
         <view class="my-menu-list-item">
           <text><text class="iconfont iconziyuan25 list-icon"></text>在线客服</text>
           <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
         </view>
         <view class="my-menu-list-item">
           <text><text class="iconfont iconfankui2 list-icon"></text>用户反馈</text>
+          <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item" bindtap="updateVersion">
+          <text><text class="iconfont iconbanben list-icon"></text>检查更新</text>
+          <view class="my-menu-list-item-content">V{{accountVersion}}<text class="iconfont iconright"></text></view>
+        </view>
+        <view class="my-menu-list-item" bindtap="updateVersion">
+          <text><text class="iconfont iconlajitongM list-icon"></text>清理缓存</text>
           <view class="my-menu-list-item-content"><text class="iconfont iconright"></text></view>
         </view>
       </view>
