@@ -54,14 +54,14 @@ Page({
 
   // 路线规划
   initMapRoute(index) {
-    console.log("路线规划")
+    console.log("准备路线规划")
     let that = this
     myAmapFun.getDrivingRoute({
       origin: "125.430565,43.759411",
       waypoints: "125.400166,43.767901;125.400885,43.767067;125.376235,43.720019;125.283099,43.706361;125.039335,43.83177;125.172428,43.86568;125.212672,43.896869;125.230781,43.91038;125.228626,43.937598;125.261396,43.95463;125.257802,43.989404;125.320325,43.993347;125.400382,44.02312;125.426684,44.014408;125.331374,43.905996;125.33132,43.884032;",
       destination: "125.329954,43.917341",
       success: function (data) {
-        console.log(data)
+        console.log("路线规划完成响应值",data)
         wx.hideLoading()
         var points = [];
         if (data.paths && data.paths[0] && data.paths[0].steps) {
@@ -77,7 +77,7 @@ Page({
           }
         }
         let colorList = [
-          "rgb(192, 29, 29)",
+          "#ff0000",
           "rgb(214, 156, 31)",
           "rgb(216, 219, 22)",
           "rgb(109, 238, 24)",
@@ -86,12 +86,13 @@ Page({
         let polyline = []
         polyline.push({
             points: points,
-            color: colorList[index],
+            color: colorList[index], // 坑、所使用的颜色值请用十六进制（#ff0000），禁止使用RGB
             width: 4
         })
         that.setData({
           polyline: polyline
         });
+        console.log("路线坐标点",that.data.polyline)
       },
       fail: function (info) {
         console.log(info)
