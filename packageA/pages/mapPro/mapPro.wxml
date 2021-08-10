@@ -1,0 +1,25 @@
+<!--packageA/pages/mapPro/mapPro.wxml-->
+<map scale="10" id="myMap" class="map-pro" arrowLine="{{true}}" longitude="{{longitude}}" latitude="{{latitude}}"
+  markers="{{markers}}" polyline="{{polyline}}" layer-style="1" subkey="U52BZ-WTVWJ-YDTFO-FPUX3-QOBZJ-RABBX"></map>
+
+<view class="road-info">
+  <view class="road-direction">左转</view>
+  <view class="road-data">
+    <view class="road-distance">
+      <view class="road-distance-num">31</view>
+      <view class="">
+        <text class="">米</text>
+        <text class="road-color-gray road-margin-left-10">进入</text>
+      </view>
+    </view>
+    <view class="road-name">
+      无名道路
+    </view>
+  </view>
+  <view class="road-wifi">
+    卫星信号弱
+    <text class="iconfont iconxinhao3"></text>
+  </view>
+</view>
+
+<!--  操作  -->

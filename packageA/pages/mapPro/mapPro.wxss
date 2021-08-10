@@ -1,0 +1,81 @@
+/* packageA/pages/mapPro/mapPro.wxss */
+.map-pro {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+/* 道路信息 */
+.road-info {
+  height: 200rpx;
+  width: calc(100vw - 60rpx);
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  background-color: #1F2432;
+  opacity: .9;
+  z-index: 9;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.road-direction {
+  width: 30%;
+  text-align: center;
+}
+
+.road-data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.road-distance {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  align-items: flex-end;
+}
+
+.road-distance-num {
+  color: #ffffff;
+  font-size: 60rpx;
+  font-weight: 900;
+  margin-right: 10rpx;
+  position: relative;
+  bottom: -10rpx;
+}
+
+.road-name {
+  margin-top: 10rpx;
+}
+
+.road-wifi {
+  color: #da3737;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  font-size: 25rpx;
+}
+.road-wifi .iconfont{
+  font-size: 30rpx;
+}
+
+.road-font-size-40 {
+  font-size: 40rpx;
+}
+
+.road-margin-left-10 {
+  margin-left: 10rpx;
+}
+
+.road-color-gray {
+  color: #9499A5 !important;
+}

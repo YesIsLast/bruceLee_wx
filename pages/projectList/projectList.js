@@ -26,5 +26,11 @@ Page({
     wx.navigateTo({
       url: '/pages/mapDemo/mapDemo',
     })
+  },
+  // 前往独立分包地图
+  goMapPro(){
+    wx.navigateTo({
+      url: '/packageA/pages/mapPro/mapPro',
+    })
   }
 })

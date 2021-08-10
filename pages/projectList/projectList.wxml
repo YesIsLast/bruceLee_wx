@@ -47,9 +47,9 @@
       <image src="../../static/img/head2.jpg"></image>
       <text>客户端</text>
     </view>
-    <view class="project-item">
+    <view class="project-item" bindtap="goMapPro">
       <image src="../../static/img/head2.jpg"></image>
-      <text>聊天</text>
+      <text>独立地图</text>
     </view>
     <view class="project-item">
       <image src="../../static/img/head2.jpg"></image>

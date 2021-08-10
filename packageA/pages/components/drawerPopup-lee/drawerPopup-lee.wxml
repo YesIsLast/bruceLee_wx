@@ -1,0 +1,7 @@
+<view class="drawerPopupLee-main" id="{{name}}">
+	<view class="main-mask" catchtouchmove="catchtouchmove" wx:if="{{showMask}}" bindtap="emitClose"></view>
+	<view class="main-content"
+		style="height:{{height}};width:{{width}};background:{{backgroundColor}};transform:{{translate}};border-radius:{{borderRadius}};bottom:{{bottom}};left:{{left}};right:{{right}};top:{{top}};padding-left:{{paddingLeft}};padding-right:{{paddingRight}};padding-bottom:{{paddingBottom}};padding-top:{{paddingTop}}">
+		<slot></slot>
+	</view>
+</view>
