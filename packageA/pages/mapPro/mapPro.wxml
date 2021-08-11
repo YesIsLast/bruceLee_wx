@@ -1,19 +1,22 @@
 <!--packageA/pages/mapPro/mapPro.wxml-->
-<map scale="10" id="myMap" class="map-pro" arrowLine="{{true}}" longitude="{{longitude}}" latitude="{{latitude}}"
+<map scale="{{mapScale}}" id="myMap" class="map-pro" arrowLine="{{true}}" longitude="{{longitude}}"
+  latitude="{{latitude}}" show-compass="{{true}}" enable-rotate="{{true}}" include-points="{{includePoints}}"
   markers="{{markers}}" polyline="{{polyline}}" layer-style="1" subkey="U52BZ-WTVWJ-YDTFO-FPUX3-QOBZJ-RABBX"></map>
-
+<!-- 道路行进提示 -->
 <view class="road-info">
-  <view class="road-direction">左转</view>
+  <view class="road-direction">
+    <text class="iconfont {{roadAction}}"></text>
+  </view>
   <view class="road-data">
     <view class="road-distance">
-      <view class="road-distance-num">31</view>
+      <view class="road-distance-num">{{roadDistanceNum}}</view>
       <view class="">
         <text class="">米</text>
         <text class="road-color-gray road-margin-left-10">进入</text>
       </view>
     </view>
     <view class="road-name">
-      无名道路
+      {{roadName}}
     </view>
   </view>
   <view class="road-wifi">
@@ -21,5 +24,23 @@
     <text class="iconfont iconxinhao3"></text>
   </view>
 </view>
-
-<!--  操作  -->
+<!-- 全览、聚焦 -->
+<view class="overview-btn" bindtap="getMapOverview" data-params="{{openMapOverview}}">
+  <text class="iconfont iconorbit-full"></text>
+  <text>{{overviewText}}</text>
+</view>
+<!-- 站点详情抽屉 -->
+<view class=""
+  style="height: 150rpx; width: 100vw;border-radius: 40rpx 40rpx 0 0;background-color: #ffffff;display: flex; flex-direction: row;align-items: center;justify-content: space-between;position: absolute;bottom: 0;left: 0;z-index: 9;padding: 20rpx;box-sizing: border-box;color: #000000;font-weight: 600;font-size: 30rpx;">
+  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;border-right: solid 1rpx #eeeeee;padding-right: 15rpx;">
+    <text class="iconfont iconclose2"></text>
+    <text>退出</text>
+  </view>
+  <view style="">
+    <text style="font-size: 40rpx;">15.8公里 24分钟</text>
+  </view>
+  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;border-left: solid 1rpx #eeeeee;padding-left: 15rpx;">
+    <text class="iconfont icontop"></text>
+    <text>更多</text>
+  </view>
+</view>

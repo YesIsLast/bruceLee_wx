@@ -15,21 +15,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    drawerPopupLeeVal: false, // 变量是否显示弹出框
     baiduVoice: "请前往第一站",
-    longitude: 125.324282, // 中心点坐标125.324282,43.883938
-    latitude: 43.883938, // 中心点坐标
+    longitude: 125.430565, // 中心点坐标125.324282,43.883938
+    latitude: 43.759411, // 中心点坐标
     markers: [{
-      id: 9991,
-      longitude: "125.324282",
-      latitude: "43.883938",
-      width: 13,
+      id: 9991, // 车辆位置
+      longitude: "125.430565",
+      latitude: "43.759411",
+      width: 26,
       height: 26,
-      iconPath: "https://huixingappimage.oss-cn-beijing.aliyuncs.com/passenger/car.png"
+      zIndex: 9991,
+      iconPath: "../../../static/img/carRED.png"
     }],
     polyline: [],
     siteTip: [], // 导航提示语
     ranges: 100, // 语音播报范围（米）
+    roadAction: "iconzhihang", // 路线提示行进方向
+    roadDistanceNum: 0, // 路线提示距离米
+    roadName: "无名道路", // 路线提示道路名称
+    openMapOverview: false, // 是否打开地图全览
+    includePoints: [], // 地图全览站点数组
+    mapScale: 15, // 地图缩放等会
+    overviewText: "全览", // 全览按钮文字
   },
   onReady: function (e) {
     Voice(this.data.baiduVoice)
@@ -60,15 +67,6 @@ Page({
     // 开启实时定位
     this.openLocationAddr("open")
 
-    // 模拟车辆行驶
-    let that = this
-    for (let i in markersList) {
-      (function (i) {
-        setTimeout(function () {
-          that.translateMarker(markersList[i].split(",")[1], markersList[i].split(",")[0])
-        }, i * 2000);
-      })(i)
-    }
   },
   // 路线规划
   initMapRoute(index) {
@@ -95,18 +93,56 @@ Page({
               })
             }
             // 存储导航提示语,整理提示坐标
-            var segments = {
-              instruction: steps[i].instruction,
-              road: steps[i].road,
-              distance: steps[i].distance,
-              polyline: steps[i].polyline.split(';')[0],
-              orientation: steps[i].orientation,
-            };
-            that.siteTip.push(segments)
+            /// 处理行进方向
+            let actionList = ["左转", "左转掉头", "右转", "右转掉头", "直行"]
+            let actionIconList = ["iconzuozhuan", "iconzuodiaotou", "iconyouzhuan", "iconyoudiaotou", "iconzhihang"]
+            let actionIconStr = "iconzhihang"
+            for (let acIndex in actionList) {
+              if (steps[i].action.length > 0 && steps[i].action.indexOf(actionList[acIndex]) != -1) {
+                actionIconStr = actionIconList[acIndex]
+              }
+            }
+            /// 处理地图旋转角度
+            let rotateList = ["北", "东北", "东", "东南", "南", "西南", "西", "西北"]
+            let rotateNumList = [0, 45, 90, 135, 180, 225, 270, 315, 360]
+            let orientationRotate = 0
+            for (let jj in rotateList) {
+              if (steps[i].orientation && steps[i].orientation == rotateList[jj]) {
+                orientationRotate = rotateNumList[jj]
+              }
+            }
+            /// 路线导航提示语-结果赋值
+            that.siteTip.push({
+              action: steps[i].action, // 行驶方向
+              actionIcon: actionIconStr, // 行驶方向 (左转，左转掉头，右转，右转掉头，直行)
+              instruction: steps[i].instruction, // 提示语内容
+              road: steps[i].road || "无名道路", // 道路名称
+              distance: steps[i].distance, // 距离
+              polyline: steps[i].polyline.split(';')[0], // 坐标
+              orientation: steps[i].orientation, // 行进方向
+              orientationRotate: orientationRotate, // 行进方向角度
+            })
           }
         }
-        // 立即播报第一条导航提示语
-        Voice(that.siteTip[0].instruction + "然后，" + that.siteTip[1].instruction);
+        // 正式使用时立即播报第一条导航提示语
+        // that.voiceNavigation(-1)
+        // 模拟车辆行驶
+        for (let ii in that.siteTip) {
+          (function (ii) {
+            setTimeout(function () {
+              console.log(that.siteTip[ii])
+              // 模拟测试语音导航
+              Voice(that.siteTip[ii].instruction)
+              // 更新提示语
+              that.setData({
+                roadAction: that.siteTip[ii].actionIcon,
+                roadDistanceNum: that.siteTip[ii].distance,
+                roadName: that.siteTip[ii].road
+              })
+              that.translateMarker(that.siteTip[ii].polyline.split(",")[1], that.siteTip[ii].polyline.split(",")[0], that.siteTip[ii].orientationRotate)
+            }, ii * 5000);
+          })(ii)
+        }
 
         let colorList = [
           "#4CC972",
@@ -119,10 +155,10 @@ Page({
         polyline.push({
           points: points,
           color: colorList[index], // 坑、所使用的颜色值请用十六进制（#ff0000），禁止使用RGB
-          width: 6,
+          width: 4,
           borderColor: "#459068",
           arrowLine: true,
-          borderWidth: 2
+          borderWidth: 1
         })
         // 存储路线坐标组
         that.setData({
@@ -143,8 +179,12 @@ Page({
 
   // 语音导航
   voiceNavigation(lon_lat) {
+    // 播报第一条语音提示
+    if (lon_lat === -1) {
+      return Voice(this.siteTip[0].instruction + "然后，" + this.siteTip[1].instruction);
+    }
     var _this = this
-    var my_position = newName.split(',')
+    var my_position = lon_lat.split(',')
     for (var i = 0; i < _this.siteTip.length; i++) {
       // 提示点坐标
       var steps = _this.siteTip[i].polyline.split(',')
@@ -220,15 +260,16 @@ Page({
         latitude: item.split(",")[1],
         width: 20,
         height: 20,
-        iconPath: "https://huixingappimage.oss-cn-beijing.aliyuncs.com/passenger/xuliehao_1.png",
+        zIndex: 9,
+        iconPath: "https://huixingappimage.oss-cn-beijing.aliyuncs.com/passenger/xuliehao_" + (i + 1) + ".png",
         callout: {
           content: "第" + (i + 1) + "站",
           display: "ALWAYS",
           bgColor: "#ffffff",
           borderRadius: 10,
-          padding: 8,
+          padding: 4,
           textAlign: "center",
-          fontSize: 16
+          fontSize: 13
         }
       })
       this.setData({
@@ -236,12 +277,59 @@ Page({
       })
     }
   },
+  // 地图全览
+  getMapOverview(event) {
+    let mark = []
+    wx.showLoading({
+      title: "loading...",
+      mask: true
+    })
+    setTimeout(() => {
+      wx.hideLoading()
+    }, 3000);
+    // 全览
+    if (!event.currentTarget.dataset.params) {
+      console.log("开启全览", this.data.mapScale)
+      markersList.forEach(item => {
+        mark.push({
+          longitude: item.split(",")[0],
+          latitude: item.split(",")[1],
+        })
+      })
+      console.log(mark)
+      // 展开
+      this.setData({
+        openMapOverview: true,
+        overviewText: "聚焦",
+        mapScale: 10,
+        includePoints: mark
+      })
+    }
+    // 关闭全览
+    else {
+      console.log("关闭全览", this.data.mapScale)
+      // 展开
+      this.setData({
+        openMapOverview: false,
+        overviewText: "全览",
+        mapScale: 15,
+        includePoints: [{ latitude: 0, longitude: 0 }]
+      })
+    }
+
+  },
   // 微信小程序点平滑移动
-  translateMarker(lat, lon) {
+  translateMarker(lat, lon, rotate) {
+    // 同步地图中心点坐标
+    this.setData({
+      latitude: lat,
+      longitude: lon
+    })
+    // 执行平滑移动
     this.mapCtx.translateMarker({
       markerId: 9991,
-      autoRotate: true,
-      duration: 2000,
+      duration: 500,
+      // rotate: rotate, // 设置车辆角度
       destination: {
         latitude: lat,
         longitude: lon,

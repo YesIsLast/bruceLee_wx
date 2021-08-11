@@ -27,8 +27,12 @@
 }
 
 .road-direction {
-  width: 30%;
+  width: 20%;
   text-align: center;
+}
+
+.road-direction .iconfont {
+  font-size: 80rpx;
 }
 
 .road-data {
@@ -64,9 +68,40 @@
   right: 10rpx;
   font-size: 25rpx;
 }
-.road-wifi .iconfont{
+
+.road-wifi .iconfont {
   font-size: 30rpx;
 }
+
+.overview-btn {
+  width: 80rpx;
+  box-shadow: 0 0 8rpx 1rpx #7e7e7e;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 200rpx;
+  right: 20rpx;
+  z-index: 9;
+  font-weight: 600;
+}
+.overview-btn .iconfont{
+  font-size: 50rpx;
+}
+
+
+
+
+
+
+
+
+
 
 .road-font-size-40 {
   font-size: 40rpx;
