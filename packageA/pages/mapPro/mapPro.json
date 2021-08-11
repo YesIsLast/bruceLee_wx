@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "drawerPopup": "../components/drawerPopup-lee/drawerPopup-lee"
-  }
+  },
+  "navigationStyle": "custom"
 }

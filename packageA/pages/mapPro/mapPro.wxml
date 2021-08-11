@@ -1,6 +1,6 @@
 <!--packageA/pages/mapPro/mapPro.wxml-->
 <map scale="{{mapScale}}" id="myMap" class="map-pro" arrowLine="{{true}}" longitude="{{longitude}}"
-  latitude="{{latitude}}" show-compass="{{true}}" enable-rotate="{{true}}" include-points="{{includePoints}}"
+  latitude="{{latitude}}" show-compass="{{false}}" enable-traffic="{{true}}" enable-rotate="{{true}}" include-points="{{includePoints}}"
   markers="{{markers}}" polyline="{{polyline}}" layer-style="1" subkey="U52BZ-WTVWJ-YDTFO-FPUX3-QOBZJ-RABBX"></map>
 <!-- 道路行进提示 -->
 <view class="road-info">
@@ -32,12 +32,13 @@
 <!-- 站点详情抽屉 -->
 <view class=""
   style="height: 150rpx; width: 100vw;border-radius: 40rpx 40rpx 0 0;background-color: #ffffff;display: flex; flex-direction: row;align-items: center;justify-content: space-between;position: absolute;bottom: 0;left: 0;z-index: 9;padding: 20rpx;box-sizing: border-box;color: #000000;font-weight: 600;font-size: 30rpx;">
-  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;border-right: solid 1rpx #eeeeee;padding-right: 15rpx;">
+  <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;border-right: solid 1rpx #eeeeee;padding-right: 15rpx;" bindtap="quitPageMap">
     <text class="iconfont iconclose2"></text>
     <text>退出</text>
   </view>
-  <view style="">
-    <text style="font-size: 40rpx;">15.8公里 24分钟</text>
+  <view style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+    <text style="font-size: 40rpx;">全程{{lineDistance}}公里</text>
+    <text style="font-size: 40rpx;">预计{{lineDuration}}钟</text>
   </view>
   <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;border-left: solid 1rpx #eeeeee;padding-left: 15rpx;">
     <text class="iconfont icontop"></text>

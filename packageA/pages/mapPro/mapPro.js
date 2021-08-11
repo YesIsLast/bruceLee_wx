@@ -9,6 +9,7 @@ var myAmapFun = new amapFile.AMapWX({
 });
 // 引入百度语音识别
 var Voice = require("../../../libs/QS-baiduyy").default;
+var voiceSettime = null
 Page({
 
   /**
@@ -37,6 +38,8 @@ Page({
     includePoints: [], // 地图全览站点数组
     mapScale: 15, // 地图缩放等会
     overviewText: "全览", // 全览按钮文字
+    lineDistance: 0, // 路线全程距离(公里=1千米)
+    lineDuration: 0, // 路线全程时间（秒=时-分）
   },
   onReady: function (e) {
     Voice(this.data.baiduVoice)
@@ -51,7 +54,6 @@ Page({
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -59,6 +61,7 @@ Page({
 
     wx.showLoading({
       title: '地图初始化...',
+      mask:true
     })
     // 使用外部json地图站点初始化
     this.initMapMarkers(markersList)
@@ -68,17 +71,30 @@ Page({
     this.openLocationAddr("open")
 
   },
+  onUnload: function () {
+
+    // 停止语音播报
+    clearTimeout(voiceSettime)
+  },
   // 路线规划
   initMapRoute(index) {
     let that = this
     // 初始化地图变量
     that.siteTip = []
+    that.lineDistance = 0
+    that.lineDuration = 0
     myAmapFun.getDrivingRoute({
       origin: "125.430565,43.759411",
       waypoints: "125.400166,43.767901;125.400885,43.767067;125.376235,43.720019;125.283099,43.706361;125.039335,43.83177;125.172428,43.86568;125.212672,43.896869;125.230781,43.91038;125.228626,43.937598;125.261396,43.95463;125.257802,43.989404;125.320325,43.993347;125.400382,44.02312;125.426684,44.014408;125.331374,43.905996;125.33132,43.884032;",
       destination: "125.329954,43.917341",
       success: function (data) {
         console.log("路线规划完成响应值", data)
+        // 更新路线距离与时间
+        that.setData({
+          lineDistance: (data.paths[0].distance / 1000).toFixed(2),
+          lineDuration: that.timezh(data.paths[0].duration)
+        })
+
         wx.hideLoading()
         // 处理规划路线坐标点
         var points = [];
@@ -129,7 +145,7 @@ Page({
         // 模拟车辆行驶
         for (let ii in that.siteTip) {
           (function (ii) {
-            setTimeout(function () {
+            voiceSettime = setTimeout(function () {
               console.log(that.siteTip[ii])
               // 模拟测试语音导航
               Voice(that.siteTip[ii].instruction)
@@ -340,4 +356,58 @@ Page({
     })
   },
 
+  // 时间转换（秒-）
+  timezh(value) {
+    let theTime = parseInt(value); // 需要转换的时间秒
+    let theTime1 = 0; // 分
+    let theTime2 = 0; // 小时
+    let theTime3 = 0; // 天
+    if (theTime > 60) {
+      theTime1 = parseInt(theTime / 60);
+      theTime = parseInt(theTime % 60);
+      if (theTime1 > 60) {
+        theTime2 = parseInt(theTime1 / 60);
+        theTime1 = parseInt(theTime1 % 60);
+        if (theTime2 > 24) {
+          // 大于24小时
+          theTime3 = parseInt(theTime2 / 24);
+          theTime2 = parseInt(theTime2 % 24);
+        }
+      }
+    }
+    let result = '';
+    // if (theTime > 0) {
+    //     result = "" + parseInt(theTime) + "秒";
+    // }
+    if (theTime1 > 0) {
+      result = "" + parseInt(theTime1) + "分" + result;
+    }
+    if (theTime2 > 0) {
+      result = "" + parseInt(theTime2) + "小时" + result;
+    }
+    if (theTime3 > 0) {
+      result = "" + parseInt(theTime3) + "天" + result;
+    }
+    return result;
+  },
+  // 退出
+  quitPageMap() {
+    wx.showModal({
+      title: '警告',
+      content: '是否确认退出道路规划导航！',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          wx.reLaunch({
+            url: '/pages/projectList/projectList',
+            fail(err){
+              console.error(err)
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  }
 })
