@@ -140,7 +140,7 @@ Page({
                 roadName: that.siteTip[ii].road
               })
               that.translateMarker(that.siteTip[ii].polyline.split(",")[1], that.siteTip[ii].polyline.split(",")[0], that.siteTip[ii].orientationRotate)
-            }, ii * 5000);
+            }, ii * 8000);
           })(ii)
         }
 
@@ -328,7 +328,7 @@ Page({
     // 执行平滑移动
     this.mapCtx.translateMarker({
       markerId: 9991,
-      duration: 500,
+      duration: 1000,
       // rotate: rotate, // 设置车辆角度
       destination: {
         latitude: lat,
