@@ -9,7 +9,6 @@ var myAmapFun = new amapFile.AMapWX({
 });
 // 引入百度语音识别
 var Voice = require("../../../libs/QS-baiduyy").default;
-var voiceSettime = null
 Page({
 
   /**
@@ -61,7 +60,7 @@ Page({
 
     wx.showLoading({
       title: '地图初始化...',
-      mask:true
+      mask: true
     })
     // 使用外部json地图站点初始化
     this.initMapMarkers(markersList)
@@ -70,11 +69,6 @@ Page({
     // 开启实时定位
     this.openLocationAddr("open")
 
-  },
-  onUnload: function () {
-
-    // 停止语音播报
-    clearTimeout(voiceSettime)
   },
   // 路线规划
   initMapRoute(index) {
@@ -145,10 +139,16 @@ Page({
         // 模拟车辆行驶
         for (let ii in that.siteTip) {
           (function (ii) {
-            voiceSettime = setTimeout(function () {
+            setTimeout(function () {
               console.log(that.siteTip[ii])
               // 模拟测试语音导航
-              Voice(that.siteTip[ii].instruction)
+              if (ii < 5) {
+                if (ii == 4) {
+                  Voice("语音导航播报测试到此结束")
+                }else{
+                  Voice(that.siteTip[ii].instruction)
+                }
+              }
               // 更新提示语
               that.setData({
                 roadAction: that.siteTip[ii].actionIcon,
@@ -400,7 +400,7 @@ Page({
           console.log('用户点击确定')
           wx.reLaunch({
             url: '/pages/projectList/projectList',
-            fail(err){
+            fail(err) {
               console.error(err)
             }
           })
