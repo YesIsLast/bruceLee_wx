@@ -41,7 +41,7 @@
     </view>
     <view class="project-item" style="height:280rpx" bindtap="goMap">
       <image src="../../static/img/head2.jpg"></image>
-      <text>地图</text>
+      <text>地图DEMO</text>
     </view>
     <view class="project-item">
       <image src="../../static/img/head2.jpg"></image>
@@ -49,7 +49,7 @@
     </view>
     <view class="project-item" bindtap="goMapPro">
       <image src="../../static/img/head2.jpg"></image>
-      <text>独立地图</text>
+      <text>地图导航</text>
     </view>
     <view class="project-item">
       <image src="../../static/img/head2.jpg"></image>
